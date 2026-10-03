@@ -1,45 +1,14 @@
 # 06. Drivers arquitectónicos
 
-Los principales drivers arquitectónicos de AnyColor Salón son:
+Un driver es un requisito, atributo de calidad o restricción que **cambia la forma en que diseñamos** la arquitectura.
 
-## 1. Reserva concurrente
-
-El sistema debe evitar que dos clientes puedan confirmar simultáneamente el mismo horario, estilista o recurso.
-
-**Decisión:** utilizar Redis para realizar bloqueos temporales de 5 minutos.
-
-## 2. Escalabilidad
-
-El sistema debe soportar crecimiento de usuarios y múltiples sedes.
-
-**Decisión:** utilizar una arquitectura que permita escalar horizontalmente los servicios backend.
-
-## 3. Consistencia de datos
-
-Las reservas, ventas e inventario requieren operaciones consistentes.
-
-**Decisión:** utilizar PostgreSQL como base de datos transaccional.
-
-## 4. Seguridad
-
-Los usuarios deben acceder únicamente a las funciones permitidas por su rol.
-
-**Decisión:** implementar autenticación, RBAC, HTTPS/TLS y auditoría.
-
-## 5. Rendimiento
-
-Las consultas frecuentes de catálogo y disponibilidad deben responder rápidamente.
-
-**Decisión:** utilizar índices en PostgreSQL y Redis para caché.
-
-## 6. Integración
-
-El sistema debe poder comunicarse con servicios externos.
-
-**Decisión:** utilizar API REST/JSON y procesamiento asíncrono mediante colas.
-
-## 7. Evolución
-
-La arquitectura debe permitir incorporar posteriormente capacidades analíticas y BI.
-
-**Decisión:** separar las operaciones transaccionales de la futura capa analítica.
+| ID | Driver arquitectónico | Origen | ¿Por qué influye en la arquitectura? | Decisión que responde |
+| --- | --- | --- | --- | --- |
+| DA01 | Evitar reservas solapadas con muchas clientas simultáneas | RF07, AC05 | Exige exclusión mutua distribuida y una última guardia en la base de datos | ADR-004, ADR-003 |
+| DA02 | Soportar > 10 000 usuarios concurrentes y crecer a más sedes | AC03, RC02 | Obliga a una API sin estado, escalable horizontalmente detrás de un balanceador | ADR-001 |
+| DA03 | Consistencia en ventas, caja e inventario | AC05, RC03 | Exige transacciones ACID e idempotencia | ADR-003, ADR-008 |
+| DA04 | Seguridad y aislamiento por rol y sede | AC04, RC02, RC07 | Condiciona autenticación, autorización y filtrado de datos por sede | ADR-005 |
+| DA05 | Lecturas de catálogo y turnos < 200 ms | AC01 | Obliga a caché en memoria e índices | ADR-004 |
+| DA06 | Mantenibilidad: cambios sin romper otros módulos | AC07 | Influye en la separación de responsabilidades y en la dirección de las dependencias | ADR-001, ADR-002 |
+| DA07 | Integración con pagos, mensajería y almacenamiento | RC08 | Condiciona la comunicación con servicios externos y su reemplazo futuro | ADR-006, ADR-007 |
+| DA08 | Evolución a analítica/BI sin degradar la operación | RC12 | Obliga a separar lecturas pesadas del modelo transaccional | ADR-009 |
