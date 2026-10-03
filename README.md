@@ -4,31 +4,44 @@
 
 **Curso:** IS-488 Arquitectura de Software
 **Estudiante:** Conde Cayllahua, Andy Rodrigo
+**Docente del curso:** Ing. Lizbeth Jaico Quispe
 **Proyecto:** Sistema Web Multisede para la Gestión Operativa, Reserva Concurrente de Citas y Control de Ventas en Salones de Belleza
 **Periodo:** 2026-II
 
 ## Descripción
 
-AnyColor Salón es un sistema web multisede orientado a gestionar las operaciones de un salón de belleza. El sistema permitirá administrar usuarios, servicios, citas, ventas, inventario, personal y reportes.
+AnyColor Salón es un sistema web multisede que gestiona usuarios, catálogo, citas, ventas (POS y caja), inventario, personal con comisiones y reportes. Su reto principal es **evitar cruces de horario** cuando muchas clientas reservan a la vez, y mantener **caja e inventario consistentes** en cada sede.
 
-El sistema busca mejorar la organización de las operaciones y controlar las reservas concurrentes para evitar conflictos de horario entre clientes y estilistas.
+## Arquitectura en una mirada
 
-## Arquitectura inicial
-
-Se propone una arquitectura en tres capas:
-
-1. Presentación
-2. Lógica de negocio
-3. Datos
-
-La solución considera tecnologías web, una API, PostgreSQL para persistencia y Redis para apoyar el control de concurrencia y caché.
+* **Estilo:** monolito modular escalable horizontalmente (backend) + frontend SPA, conectados por API REST.
+* **Enfoque interno:** Clean Architecture (Dominio, Aplicación, Infraestructura, Presentación).
+* **Datos:** PostgreSQL como fuente de verdad; Redis para bloqueos de 5 min y caché; cola para tareas en segundo plano.
 
 ## Documentación
 
-* [Actores](analisis-del-sistema/01-actores.md)
-* [Historias de usuario](analisis-del-sistema/02-historias-de-usuario.md)
-* [Requisitos funcionales](analisis-del-sistema/03-requisitos-funcionales.md)
-* [Atributos de calidad](analisis-del-sistema/04-atributos-de-calidad.md)
-* [Restricciones](requisitos/restricciones.md)
-* [Drivers arquitectónicos](docs/requisitos/06-drivers-arquitectonicos.md)
-* [Arquitectura inicial](docs/arquitectura/arquitectura-inicial.md)
+### Etapa 1 – Análisis del sistema
+* [00 Necesidad del negocio](analisis-del-sistema/00-necesidad-del-negocio.md)
+* [01 Actores](analisis-del-sistema/01-actores.md)
+* [02 Historias de usuario](analisis-del-sistema/02-historias-de-usuario.md)
+* [03 Requisitos funcionales](analisis-del-sistema/03-requisitos-funcionales.md)
+* [04 Atributos de calidad](analisis-del-sistema/04-atributos-de-calidad.md)
+* [05 Restricciones](requisitos/restricciones.md)
+* [06 Drivers arquitectónicos](docs/requisitos/06-drivers-arquitectonicos.md)
+
+### Etapa 2 – Diseño arquitectónico
+* [Arquitectura inicial en tres capas](docs/arquitectura/arquitectura-inicial.md)
+* [Decisiones arquitectónicas (ADR)](arquitectura/decisiones-arquitectonicas.md)
+* [Estilo arquitectónico](arquitectura/estilo-arquitectonico.md)
+* [Enfoque: Clean Architecture](arquitectura/enfoque/enfoque-arquitectonico.md)
+* [Diagramas C4, secuencias, estados y modelo de datos](docs/diagramas/diagramas.md) (imágenes PNG en `docs/diagramas/img/`)
+* [Propuesta de proyecto (DOCX)](docs/propuesta/PROPUESTA_AnyColor_Salon.docx)
+
+### Código de referencia
+* [`anycolor-core/`](anycolor-core/) – núcleo Clean Architecture ejecutable en memoria (equivalente al *boilerplate* de la Guía 03).
+
+```bash
+cd anycolor-core
+npm install
+npm run pruebas      # 16 pruebas: citas concurrentes, expiración de 5 min, POS idempotente, inventario
+```
