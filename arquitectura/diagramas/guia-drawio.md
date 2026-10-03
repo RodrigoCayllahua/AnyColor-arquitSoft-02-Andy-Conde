@@ -1,6 +1,6 @@
 # Diagramas en draw.io
 
-Archivo editable: [`anycolor.drawio`](anycolor.drawio) (11 páginas, una por figura).
+Archivo editable: [`anycolor.drawio`](anycolor.drawio) (12 páginas, una por figura).
 
 Los mismos diagramas existen en código Mermaid en [`diagramas.md`](diagramas.md), que GitHub dibuja automáticamente. El `.drawio` es la versión editable para ajustar el aspecto y exportar imágenes para la propuesta.
 
@@ -12,21 +12,26 @@ Los mismos diagramas existen en código Mermaid en [`diagramas.md`](diagramas.md
 
 También sirve la extensión *Draw.io Integration* de VS Code: al abrir el archivo se edita dentro del editor.
 
+## Estilo visual
+
+Las páginas 01 a 04 siguen el diseño de los diagramas de la propuesta original (cajas azul marino, tonos verde azulado y contenedores claros), para mantener la continuidad entre versiones.
+
 ## Contenido
 
 | Pág. | Nombre | Figura | Guía / Documento relacionado |
 | --- | --- | --- | --- |
-| 01 | C4 Contexto (C1) | Figura 4.1 | Propuesta · Arquitectura de bajo nivel |
-| 02 | C4 Contenedores (C2) | Figura 4.2 | Propuesta · Arquitectura de bajo nivel |
-| 03 | C4 Componentes (C3) | Figura 4.3 | Propuesta · Arquitectura de bajo nivel |
-| 04 | Arquitectura en tres capas | — | Guía 02, ejercicio 10 |
-| 05 | Estilo monolito modular | — | Guía 03, paso 4 · ADR-001 |
-| 06 | Clean Architecture | — | Guía 03, paso 5 · ADR-002 |
-| 07 | Secuencia de reserva concurrente | — | RF07 · ADR-003 · ADR-004 |
-| 08 | Secuencia de venta en el POS | — | RF10 · ADR-008 |
-| 09 | Estados de la cita | — | RF08 |
-| 10 | Modelo de datos | — | ADR-003 |
-| 11 | Hoja de ruta | — | Plan de evolución tecnológica |
+| 01 | Arquitectura de alto nivel (DAN) | Sección 5.2 | Propuesta · Flujo de acceso |
+| 02 | C4 Contexto (C1) | Figura 4.1 | Propuesta · Arquitectura de bajo nivel |
+| 03 | C4 Contenedores (C2) | Figura 4.2 | Propuesta · Arquitectura de bajo nivel |
+| 04 | C4 Componentes (C3) | Figura 4.3 | Propuesta · Arquitectura de bajo nivel |
+| 05 | Arquitectura en tres capas | Figura 5.0 | Guía 02, ejercicio 10 |
+| 06 | Estilo monolito modular | Figura 5.1 | Guía 03, paso 4 · ADR-001 |
+| 07 | Clean Architecture | Figura 5.2 | Guía 03, paso 5 · ADR-002 |
+| 08 | Secuencia de reserva concurrente | Figura 5.3 | RF07 · ADR-003 · ADR-004 |
+| 09 | Secuencia de venta en el POS | Figura 5.5 | RF10 · ADR-008 |
+| 10 | Estados de la cita | Figura 5.4 | RF08 |
+| 11 | Modelo de datos | Figura 5.6 | ADR-003 |
+| 12 | Hoja de ruta | Figura 7.1 | Plan de evolución tecnológica |
 
 ## Cómo exportar para la propuesta
 
