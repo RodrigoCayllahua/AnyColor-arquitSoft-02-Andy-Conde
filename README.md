@@ -35,6 +35,7 @@ AnyColor Salón es un sistema web multisede que gestiona usuarios, catálogo, ci
 * [Estilo arquitectónico](arquitectura/estilo-arquitectonico.md)
 * [Enfoque: Clean Architecture](arquitectura/enfoque/enfoque-arquitectonico.md)
 * [Diagramas C4, secuencias, estados y modelo de datos](arquitectura/diagramas/diagramas.md) (imágenes PNG en `arquitectura/diagramas/img/`)
+* [Diagramas editables en draw.io](arquitectura/diagramas/anycolor.drawio) y su [guía](arquitectura/diagramas/guia-drawio.md)
 * [Propuesta de proyecto (DOCX)](propuesta/PROPUESTA_AnyColor_Salon.docx)
 
 ### Código de referencia
