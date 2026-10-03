@@ -12,10 +12,12 @@ flowchart TB
 
     subgraph PRESENTACION["Capa de Presentación"]
         WEB["Aplicación Web Responsive"]
+        API["API REST / JSON (HTTPS)"]
     end
 
     subgraph NEGOCIO["Capa de Lógica de Negocio"]
         AUTH["Auth y RBAC"]
+        CAT["Catálogo y Servicios"]
         BOOK["Motor de Reservas"]
         POS["POS y Caja"]
         INV["Gestión de Inventario"]
@@ -30,20 +32,26 @@ flowchart TB
 
     EXT1["Servicio de Pagos"]
     EXT2["Servicio de Mensajería"]
+    EXT3["Almacén de objetos"]
 
     U --> WEB
     E --> WEB
     C --> WEB
     A --> WEB
 
-    WEB --> AUTH
-    WEB --> BOOK
-    WEB --> POS
-    WEB --> INV
-    WEB --> STAFF
-    WEB --> REPORT
+    WEB --> API
+    API --> AUTH
+    API --> CAT
+    API --> BOOK
+    API --> POS
+    API --> INV
+    API --> STAFF
+    API --> REPORT
 
     AUTH --> DB
+    CAT --> DB
+    CAT --> REDIS
+    CAT --> EXT3
     BOOK --> DB
     BOOK --> REDIS
     POS --> DB
