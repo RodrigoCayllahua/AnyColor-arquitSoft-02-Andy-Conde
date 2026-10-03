@@ -26,16 +26,16 @@ AnyColor Salón es un sistema web multisede que gestiona usuarios, catálogo, ci
 * [02 Historias de usuario](analisis-del-sistema/02-historias-de-usuario.md)
 * [03 Requisitos funcionales](analisis-del-sistema/03-requisitos-funcionales.md)
 * [04 Atributos de calidad](analisis-del-sistema/04-atributos-de-calidad.md)
-* [05 Restricciones](requisitos/restricciones.md)
-* [06 Drivers arquitectónicos](docs/requisitos/06-drivers-arquitectonicos.md)
+* [05 Restricciones](analisis-del-sistema/05-restricciones.md)
+* [06 Drivers arquitectónicos](analisis-del-sistema/06-drivers-arquitectonicos.md)
 
 ### Etapa 2 – Diseño arquitectónico
-* [Arquitectura inicial en tres capas](docs/arquitectura/arquitectura-inicial.md)
+* [Arquitectura inicial en tres capas](arquitectura/arquitectura-inicial.md)
 * [Decisiones arquitectónicas (ADR)](arquitectura/decisiones-arquitectonicas.md)
 * [Estilo arquitectónico](arquitectura/estilo-arquitectonico.md)
 * [Enfoque: Clean Architecture](arquitectura/enfoque/enfoque-arquitectonico.md)
-* [Diagramas C4, secuencias, estados y modelo de datos](docs/diagramas/diagramas.md) (imágenes PNG en `docs/diagramas/img/`)
-* [Propuesta de proyecto (DOCX)](docs/propuesta/PROPUESTA_AnyColor_Salon.docx)
+* [Diagramas C4, secuencias, estados y modelo de datos](arquitectura/diagramas/diagramas.md) (imágenes PNG en `arquitectura/diagramas/img/`)
+* [Propuesta de proyecto (DOCX)](propuesta/PROPUESTA_AnyColor_Salon.docx)
 
 ### Código de referencia
 * [`anycolor-core/`](anycolor-core/) – núcleo Clean Architecture ejecutable en memoria (equivalente al *boilerplate* de la Guía 03).
