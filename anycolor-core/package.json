@@ -1,0 +1,14 @@
+{
+  "name": "anycolor-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Núcleo Clean Architecture de AnyColor Salón (dominio + casos de uso + adaptadores en memoria)",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "pruebas": "tsc -p tsconfig.json && node dist/pruebas/nucleo.pruebas.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "~5.5.2"
+  }
+}
