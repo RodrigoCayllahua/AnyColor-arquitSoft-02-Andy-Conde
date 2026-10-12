@@ -12,5 +12,5 @@ Cada cambio importante de la propuesta genera una versión nueva. Los archivos d
 1. Copia el último `.docx` y cambia el sufijo (`- v3`).
 2. Haz los cambios en la copia.
 3. Agrega una fila a esta tabla y a la sección "Historial de Versiones" del propio documento.
-4. Si cambiaste diagramas, actualiza `arquitectura/diagramas/anycolor.drawio`.
+4. Si cambiaste diagramas, actualiza `img/fuentes/anycolor.drawio`.
 5. Haz commit: `docs(propuesta): agregar version 3 con <resumen del cambio>`.

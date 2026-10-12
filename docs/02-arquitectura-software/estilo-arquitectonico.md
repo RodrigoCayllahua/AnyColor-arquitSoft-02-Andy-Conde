@@ -8,7 +8,7 @@
 | --- | --- |
 | Escalabilidad (DA02) | La API es **sin estado**: se replican instancias detrás de un balanceador. |
 | Consistencia (DA01, DA03) | Venta, inventario, caja y comisión se resuelven en **una transacción local** de PostgreSQL. |
-| Mantenibilidad (DA06) | Módulos con fronteras claras; cada módulo con Clean Architecture (ver `enfoque/`). |
+| Mantenibilidad (DA06) | Módulos con fronteras claras; cada módulo con Clean Architecture (ver [enfoque-arquitectonico.md](enfoque-arquitectonico.md)). |
 | Costo y operación | Una sola unidad de despliegue para el MVP. |
 | Evolución | Los módulos más calientes (Citas, Reportes) pueden extraerse después. |
 

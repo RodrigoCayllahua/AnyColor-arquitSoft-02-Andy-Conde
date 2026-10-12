@@ -13,7 +13,7 @@
 > Las flechas de importación apuntan **hacia adentro**: Presentación → Aplicación → Dominio ← Infraestructura.
 > El dominio no importa nada. Infraestructura **implementa** los contratos que el dominio declara.
 
-## Mapa de capas en el código (`anycolor-core/src/`)
+## Mapa de capas en el código (`tecnologia/anycolor-core/src/`)
 
 | Capa | Carpeta | Contenido real |
 | --- | --- | --- |
@@ -93,4 +93,4 @@ flowchart LR
 
 ## Cómo se verifica
 
-`npm run pruebas` (en `anycolor-core/`) ejecuta 16 pruebas del dominio y los casos de uso **sin Next.js, sin PostgreSQL y sin Redis**: la prueba de que el núcleo no depende de la tecnología.
+`npm run pruebas` (en `tecnologia/anycolor-core/`) ejecuta 16 pruebas del dominio y los casos de uso **sin Next.js, sin PostgreSQL y sin Redis**: la prueba de que el núcleo no depende de la tecnología.
