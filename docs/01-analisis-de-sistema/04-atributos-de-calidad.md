@@ -14,3 +14,5 @@ Cada atributo se expresa como un **escenario medible** (fuente → estímulo →
 | AC08 | Usabilidad | Una clienta reserva desde su celular. | Diseño responsive, ≤ 4 pasos |
 | AC09 | Observabilidad | Ocurre un error en producción. Queda en logs centralizados con métricas. | Alertas y trazas por petición |
 | AC10 | Recuperabilidad | Falla la base de datos principal. | Respaldo diario con retención; RPO ≤ 24 h |
+
+> Cada atributo se detalla como escenario de seis partes (fuente, estímulo, artefacto, condición, respuesta y medida) en [08-escenarios-atributos-calidad.md](08-escenarios-atributos-calidad.md).
