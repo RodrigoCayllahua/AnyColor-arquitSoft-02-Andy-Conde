@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1010" viewBox="0 0 1700 1010">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">[Diagrama de contexto] AnyColor Salón</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Modelo C4 · Nivel 1 (contexto del sistema) · Sistema web multisede para salones de belleza</text>
+<text x="1672" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">Vista de contexto · v3</text>
+<circle cx="310.0" cy="107" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="195" y="125" width="230" height="115" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="310.0" y="165.57500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cliente</text>
+<text x="310.0" y="180.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<text x="310.0" y="199.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Reserva, cancela y consulta sus citas</text>
+<text x="310.0" y="214.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">desde el celular</text>
+<circle cx="580.0" cy="107" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="465" y="125" width="230" height="115" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="580.0" y="165.57500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Estilista</text>
+<text x="580.0" y="180.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<text x="580.0" y="199.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Atiende citas y consulta su producción</text>
+<text x="580.0" y="214.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">y comisiones</text>
+<circle cx="850.0" cy="107" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="735" y="125" width="230" height="115" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="850.0" y="165.57500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cajero</text>
+<text x="850.0" y="180.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<text x="850.0" y="199.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cobra servicios y productos; abre y</text>
+<text x="850.0" y="214.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">cierra la caja</text>
+<circle cx="1120.0" cy="107" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="1005" y="125" width="230" height="115" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="1120.0" y="165.57500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Administrador de sede</text>
+<text x="1120.0" y="180.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<text x="1120.0" y="199.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Gestiona catálogo, inventario,</text>
+<text x="1120.0" y="214.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">personal y reportes de su sede</text>
+<circle cx="1390.0" cy="107" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="1275" y="125" width="230" height="115" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="1390.0" y="165.57500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">SuperAdministrador</text>
+<text x="1390.0" y="180.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<text x="1390.0" y="199.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Crea sedes y usuarios; ve indicadores</text>
+<text x="1390.0" y="214.97500000000002" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">de todas las sedes</text>
+<rect x="620" y="390" width="460" height="150" rx="8" fill="#2F5597" stroke="#21407A" stroke-width="1.4"/>
+<text x="850.0" y="447.3" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">AnyColor Salón</text>
+<text x="850.0" y="466.90000000000003" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#D5E0F2" text-anchor="middle">[Sistema de software]</text>
+<text x="850.0" y="485.90000000000003" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Plataforma web multisede: reserva concurrente de citas, POS y caja, inventario,</text>
+<text x="850.0" y="500.90000000000003" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">personal, comisiones y reportes</text>
+<path d="M310,240 L310,322 L690,322 L690,390" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M580,240 L580,300 L770,300 L770,390" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M850,240 L850,390" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1120,240 L1120,300 L930,300 L930,390" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1390,240 L1390,322 L1010,322 L1010,390" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="260" y="670" width="250" height="125" rx="8" fill="#9A9A9A" stroke="#7E7E7E" stroke-width="1.4"/>
+<text x="385.0" y="721.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Pasarela de pagos</text>
+<text x="385.0" y="737.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="middle">[Sistema externo]</text>
+<text x="385.0" y="756.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Procesa cobros con tarjeta y Yape/Plin</text>
+<rect x="570" y="670" width="250" height="125" rx="8" fill="#9A9A9A" stroke="#7E7E7E" stroke-width="1.4"/>
+<text x="695.0" y="721.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Servicio de mensajería</text>
+<text x="695.0" y="737.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="middle">[Sistema externo]</text>
+<text x="695.0" y="756.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">WhatsApp API y correo electrónico</text>
+<rect x="880" y="670" width="250" height="125" rx="8" fill="#9A9A9A" stroke="#7E7E7E" stroke-width="1.4"/>
+<text x="1005.0" y="713.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Almacenamiento de objetos</text>
+<text x="1005.0" y="729.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="middle">[Sistema externo]</text>
+<text x="1005.0" y="748.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Imágenes de servicios y tickets (S3 /</text>
+<text x="1005.0" y="763.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cloudinary)</text>
+<rect x="1190" y="670" width="250" height="125" rx="8" fill="#E9E9E9" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="1315.0" y="713.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#444444" text-anchor="middle">Proveedor PSE (SUNAT)</text>
+<text x="1315.0" y="729.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666666" text-anchor="middle">[Sistema externo · futuro]</text>
+<text x="1315.0" y="748.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#444444" text-anchor="middle">Comprobantes electrónicos; fuera de</text>
+<text x="1315.0" y="763.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#444444" text-anchor="middle">alcance</text>
+<path d="M730,540 L730,578 L385,578 L385,670" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M810,540 L810,610 L695,610 L695,670" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M890,540 L890,610 L1005,610 L1005,670" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M970,540 L970,578 L1315,578 L1315,670" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<rect x="40" y="860" width="580" height="92" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="52" y="880" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Leyenda</text>
+<rect x="52" y="890" width="128" height="26" rx="5" fill="#1F3B66" stroke="#152A4A"/>
+<text x="116.0" y="907" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Persona</text>
+<rect x="192" y="890" width="128" height="26" rx="5" fill="#4A72B8" stroke="#36599A"/>
+<text x="256.0" y="907" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Sistema / contenedor</text>
+<rect x="332" y="890" width="128" height="26" rx="5" fill="#9A9A9A" stroke="#7E7E7E"/>
+<text x="396.0" y="907" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Sistema externo</text>
+<rect x="472" y="890" width="128" height="26" rx="5" fill="#E9E9E9" stroke="#8A8A8A" stroke-dasharray="6 4"/>
+<text x="536.0" y="907" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#444444" text-anchor="middle">Previsto (etapa futura)</text>
+<text x="52" y="938" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#444" text-anchor="start">Flecha: relación con verbo y [protocolo] · Línea discontinua: elemento previsto para una etapa futura</text>
+<path d="M800,860 h846 l14,14 v96 h-860 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M1646,860 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="812" y="882" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Notas</text>
+<text x="812" y="900.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• El sistema no guarda datos de tarjeta: solo el identificador de la transacción (RC09).</text>
+<text x="812" y="916.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• Toda la información pertenece a una sede; cada usuario ve solo lo que su rol y su sede permiten (RC02, ADR-005).</text>
+<text x="812" y="932.4000000000001" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• Los sistemas externos se integran por adaptadores; cambiar de proveedor no toca el negocio (ADR-006).</text>
+<rect x="244.3025" y="258.8125" width="131.395" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="310" y="271.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Reserva y cancela citas</text>
+<rect x="505.045" y="258.8125" width="149.91" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="580" y="271.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Ve su agenda y comisiones</text>
+<rect x="788.6725" y="258.8125" width="122.655" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="850" y="271.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Registra ventas y caja</text>
+<rect x="1071.6675" y="258.8125" width="96.66500000000002" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1120" y="271.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Gestiona su sede</text>
+<rect x="1312.9175" y="258.8125" width="154.165" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1390" y="271.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Administra sedes y usuarios</text>
+<rect x="340.635" y="619.625" width="88.72999999999999" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="385" y="632.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Solicita cobros</text>
+<text x="385" y="646.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">[HTTPS/REST]</text>
+<rect x="628.4975" y="619.625" width="133.005" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="695" y="632.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Envía confirmaciones</text>
+<text x="695" y="646.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">y recordatorios [HTTPS]</text>
+<rect x="954.1375" y="619.625" width="101.72499999999998" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1005" y="632.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Guarda imágenes</text>
+<text x="1005" y="646.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">y tickets [HTTPS]</text>
+<rect x="1254.765" y="619.625" width="120.47" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1315" y="632.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Emitirá comprobantes</text>
+<text x="1315" y="646.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">(interfaz preparada)</text>
+</svg>

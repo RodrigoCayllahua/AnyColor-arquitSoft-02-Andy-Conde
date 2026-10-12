@@ -1,60 +1,39 @@
-# Diagramas en draw.io
+# Fuentes editables de los diagramas
 
-Archivo editable: [`anycolor.drawio`](anycolor.drawio) (12 páginas, una por figura).
+Cada imagen de `img/` tiene aquí su fuente. Las imágenes PNG son las que se muestran en los documentos de `docs/` y en la propuesta.
 
-Los mismos diagramas existen en código Mermaid en [`diagramas-mermaid.md`](../../docs/04-modelo-c4/diagramas-mermaid.md), que GitHub dibuja automáticamente. El `.drawio` es la versión editable para ajustar el aspecto y exportar imágenes para la propuesta.
+| Imagen (`img/`) | Fuente | Se usa en |
+| --- | --- | --- |
+| `nivel1-contexto.png` | `nivel1-contexto.drawio`, `nivel1-contexto.svg` | `docs/04-modelo-c4/Nivel1-DiagramadeContextodelSistema.md` |
+| `nivel2-contenedores.png` | `nivel2-contenedores.drawio`, `nivel2-contenedores.svg` | `docs/04-modelo-c4/Nivel2-DiagramadeContenedores.md` |
+| `nivel3-componentes.png` | `nivel3-componentes.drawio`, `nivel3-componentes.svg` | `docs/04-modelo-c4/Nivel3-Diagrama-de-Componentes.md` |
+| `nivel4-clases.png` | `nivel4-clases.svg` | `docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md` |
+| `nivel4-secuencia.png` | `nivel4-secuencia.svg` | `docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md` |
+| `arquitectura-inicial.png` | `arquitectura-inicial.drawio`, `arquitectura-inicial.svg` | `docs/02-arquitectura-software/arquitectura-inicial.md` |
+| `estilo-monolito-modular.png` | `estilo-monolito-modular.drawio`, `estilo-monolito-modular.svg` | `docs/02-arquitectura-software/estilo-arquitectonico.md` |
+| `clean-architecture.png` | `clean-architecture.svg` | `docs/02-arquitectura-software/enfoque-arquitectonico.md` |
+| `componentes-arquitectonicos.png` | `componentes-arquitectonicos.svg` | `docs/02-arquitectura-software/componentes-arquitectonicos.md` |
+| `paquetes-modulo-citas.png` | `paquetes-modulo-citas.svg` | `docs/03-diseño-de-software/diseño-interno/diseño-interno-de-modulos.md` |
+| `principio-dip.png` | `principio-dip.svg` | `docs/03-diseño-de-software/diseño-interno/principios-de-diseño.md` |
+| `patrones-de-diseno.png` | `patrones-de-diseno.svg` | `docs/03-diseño-de-software/diseño-interno/patrones-de-diseño.md` |
+| `estados-cita.png`, `modelo-de-datos.png`, `secuencia-venta-pos.png`, `hoja-de-ruta.png` | páginas de `anycolor-v2.drawio` | Diseño interno y propuesta |
 
-## Cómo abrirlo
+`anycolor-v2.drawio` conserva las 12 páginas de la versión 2 de la propuesta (estados de la cita, modelo de datos, secuencias, hoja de ruta y los C4 anteriores).
 
-1. Entra a https://app.diagrams.net
-2. **Archivo → Abrir desde → Dispositivo** y elige `anycolor.drawio`.
-3. Abajo aparecen las pestañas de cada página.
+## Cómo editar
 
-También sirve la extensión *Draw.io Integration* de VS Code: al abrir el archivo se edita dentro del editor.
+1. Entra a https://app.diagrams.net y usa **Archivo → Abrir desde → Dispositivo**, o instala la extensión *Draw.io Integration* de VS Code.
+2. Los `.svg` se abren en el navegador o en cualquier editor vectorial (Inkscape, Figma).
+3. Después de editar, exporta a PNG con fondo blanco y escala 2x, y reemplaza el archivo en `img/` con el mismo nombre para no romper los enlaces.
 
-## Estilo visual
+## Convención visual (modelo C4)
 
-Las páginas 01 a 04 siguen el diseño de los diagramas de la propuesta original (cajas azul marino, tonos verde azulado y contenedores claros), para mantener la continuidad entre versiones.
-
-## Contenido
-
-| Pág. | Nombre | Figura | Guía / Documento relacionado |
-| --- | --- | --- | --- |
-| 01 | Arquitectura de alto nivel (DAN) | Sección 5.2 | Propuesta · Flujo de acceso |
-| 02 | C4 Contexto (C1) | Figura 4.1 | Propuesta · Arquitectura de bajo nivel |
-| 03 | C4 Contenedores (C2) | Figura 4.2 | Propuesta · Arquitectura de bajo nivel |
-| 04 | C4 Componentes (C3) | Figura 4.3 | Propuesta · Arquitectura de bajo nivel |
-| 05 | Arquitectura en tres capas | Figura 5.0 | Guía 02, ejercicio 10 |
-| 06 | Estilo monolito modular | Figura 5.1 | Guía 03, paso 4 · ADR-001 |
-| 07 | Clean Architecture | Figura 5.2 | Guía 03, paso 5 · ADR-002 |
-| 08 | Secuencia de reserva concurrente | Figura 5.3 | RF07 · ADR-003 · ADR-004 |
-| 09 | Secuencia de venta en el POS | Figura 5.5 | RF10 · ADR-008 |
-| 10 | Estados de la cita | Figura 5.4 | RF08 |
-| 11 | Modelo de datos | Figura 5.6 | ADR-003 |
-| 12 | Hoja de ruta | Figura 7.1 | Plan de evolución tecnológica |
-
-## Cómo exportar para la propuesta
-
-1. Abre la página que necesitas.
-2. **Archivo → Exportar como → PNG**.
-3. En el cuadro de exportación sube el *Zoom* (200 % o más) para que la imagen quede nítida, deja el fondo blanco y pulsa *Exportar*.
-4. Inserta la imagen en el Word con su número de figura.
-
-## Cómo conservar evidencia de elaboración
-
-- Guarda el archivo en tu Drive o en el repositorio y mantén el historial de versiones (**Archivo → Revisar historial** en Drive; commits en Git).
-- Ajusta al menos un elemento de cada página (colores, posición, textos) según tu criterio y haz commit de ese cambio.
-- Conserva capturas de pantalla del editor con el diagrama abierto.
-- Ten presente la razón de cada decisión: están justificadas en los ADR (`docs/01-analisis-de-sistema/07-decisiones-arquitectonicas.md`).
-
-## Convenciones de color
-
-| Color | Significado |
+| Elemento | Color |
 | --- | --- |
-| Amarillo | Actores / usuarios |
-| Azul | Componentes propios de la aplicación |
-| Verde | Almacenes de datos |
-| Naranja | Infraestructura de borde (CDN, balanceador) y contratos |
-| Morado | Dominio y servicios transversales |
-| Rojo | Sistemas externos |
-| Gris, línea punteada | Elemento futuro u opcional |
+| Persona | Azul marino `#1F3B66` |
+| Sistema / contenedor | Azul `#4A72B8` |
+| Componente | Celeste `#A9C4EB` |
+| Sistema externo | Gris `#9A9A9A` |
+| Previsto (etapa futura) | Gris claro con borde discontinuo |
+
+Cada flecha lleva un verbo y, cuando aplica, el protocolo entre corchetes: `Solicita cobros [HTTPS/REST]`.

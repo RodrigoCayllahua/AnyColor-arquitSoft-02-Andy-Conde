@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1390" viewBox="0 0 2200 1390">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<rect x="60" y="755" width="2100" height="575" fill="none" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Diagrama de secuencia · Reservar una cita sin cruces de horario</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">POST /api/v1/citas/bloqueos y POST /api/v1/citas · bloqueo de 5 minutos en Redis + guardia final en PostgreSQL (DA01, ADR-003, ADR-004)</text>
+<text x="2172" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">Vista de código · v3</text>
+<rect x="20.0" y="95" width="220" height="58" rx="6" fill="#F1F4F8" stroke="#7A8699" stroke-width="2"/>
+<text x="130" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:Cliente web</text>
+<text x="130" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">Aplicación web</text>
+<line x1="130" y1="153" x2="130" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="262.0" y="95" width="220" height="58" rx="6" fill="#EEF3FB" stroke="#3E64A8" stroke-width="2"/>
+<text x="372" y="130" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:CitasControlador</text>
+<line x1="372" y1="153" x2="372" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="504.0" y="95" width="220" height="58" rx="6" fill="#EEF7F0" stroke="#3C8A57" stroke-width="2"/>
+<text x="614" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:BloquearHorario</text>
+<text x="614" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">CasoUso</text>
+<line x1="614" y1="153" x2="614" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="746.0" y="95" width="220" height="58" rx="6" fill="#EEF7F0" stroke="#3C8A57" stroke-width="2"/>
+<text x="856" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:ConfirmarCita</text>
+<text x="856" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">CasoUso</text>
+<line x1="856" y1="153" x2="856" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="988.0" y="95" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="2"/>
+<text x="1098" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:RepositorioCitas</text>
+<text x="1098" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">Postgres</text>
+<line x1="1098" y1="153" x2="1098" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="1230.0" y="95" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="2"/>
+<text x="1340" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:ServicioBloqueos</text>
+<text x="1340" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">ServicioBloqueosRedis</text>
+<line x1="1340" y1="153" x2="1340" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="1472.0" y="95" width="220" height="58" rx="6" fill="#F1F4F8" stroke="#7A8699" stroke-width="2"/>
+<text x="1582" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">Redis</text>
+<text x="1582" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">contenedor</text>
+<line x1="1582" y1="153" x2="1582" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="1714.0" y="95" width="220" height="58" rx="6" fill="#F1F4F8" stroke="#7A8699" stroke-width="2"/>
+<text x="1824" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">PostgreSQL</text>
+<text x="1824" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">base de datos</text>
+<line x1="1824" y1="153" x2="1824" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="1956.0" y="95" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="2"/>
+<text x="2066" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">:Notificador</text>
+<text x="2066" y="140" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">WhatsApp / correo</text>
+<line x1="2066" y1="153" x2="2066" y2="1360" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<rect x="365" y="192" width="14" height="278" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M137,200 L365,200" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="251.0" y="193" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">1. POST /citas/bloqueos {servicio, estilista, sillón, inicio}</text>
+<rect x="607" y="236" width="14" height="219" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M379,240 L607,240" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="493.0" y="233" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">2. ejecutar(solicitud)</text>
+<rect x="1091" y="276" width="14" height="54" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M621,280 L1091,280" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="856.0" y="273" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">3. buscarSolapadas(estilista, sillón, rango)</text>
+<path d="M1091,322 L621,322" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="856.0" y="315" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">[ ] horario libre</text>
+<rect x="1333" y="356" width="14" height="84" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M621,360 L1333,360" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="977.0" y="353" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">4. adquirir(clave, clienta, 5 min) ×2</text>
+<path d="M1347,395 L1575,395" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1461.0" y="388" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">5. SET clave clienta NX PX 300000</text>
+<path d="M1575,425 L1347,425" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="1461.0" y="418" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">OK</text>
+<path d="M1333,445 L621,445" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="977.0" y="438" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">true</text>
+<path d="M607,465 L379,465" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="493.0" y="458" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">rango</text>
+<path d="M365,490 L137,490" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="251.0" y="483" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">6. 201 {expiraEnSeg: 300}</text>
+<path d="M1590,205 h546 l14,14 v56 h-560 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M2136,205 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="1602" y="227" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Si otra clienta pide el mismo horario, SET NX devuelve nil:</text>
+<text x="1602" y="243.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">responde 409 &quot;el estilista está siendo reservado&quot;.</text>
+<rect x="365" y="552" width="14" height="748" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M137,560 L365,560" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="251.0" y="553" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">7. POST /citas {citaId, servicio, estilista, sillón, rango}</text>
+<rect x="849" y="596" width="14" height="669" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M379,600 L849,600" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="614.0" y="593" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">8. ejecutar(solicitud)</text>
+<rect x="1333" y="636" width="14" height="84" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M863,640 L1333,640" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1098.0" y="633" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">9. titularDe(clave) ×2</text>
+<path d="M1347,675 L1575,675" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1461.0" y="668" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">10. GET clave</text>
+<path d="M1575,705 L1347,705" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="1461.0" y="698" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">clienta</text>
+<path d="M1333,725 L863,725" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="1098.0" y="718" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">clienta</text>
+<path d="M60,755 h70 v18 l-10,10 h-60 z" fill="#EEF2F7" stroke="#3E4A5C" stroke-width="1.3"/>
+<text x="72" y="775" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="start">alt</text>
+<text x="150" y="777" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="start">[el bloqueo sigue vigente y es de la clienta]</text>
+<line x1="60" y1="1210" x2="2160" y2="1210" stroke="#3E4A5C" stroke-width="1.3" stroke-dasharray="8 5"/>
+<text x="150" y="1232" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="start">[else: el bloqueo venció o es de otra persona]</text>
+<rect x="1091" y="807" width="14" height="56" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M863,811 L1091,811" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="977.0" y="804" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">11. buscarSolapadas(...)  guardia final</text>
+<path d="M1091,855 L863,855" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="977.0" y="848" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">[ ]</text>
+<rect x="859" y="885" width="14" height="35" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<text x="880" y="907" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="start">12. Cita.crear(...) y confirmar()</text>
+<rect x="1091" y="943" width="14" height="82" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M863,947 L1091,947" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="977.0" y="940" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">13. guardar(cita)</text>
+<path d="M1105,981 L1817,981" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1461.0" y="974" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">14. INSERT cita (EXCLUDE anti-solape)</text>
+<path d="M1817,1013 L1105,1013" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="1461.0" y="1006" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">ok</text>
+<path d="M1091,1033 L863,1033" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="977.0" y="1026" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle"></text>
+<rect x="1333" y="1061" width="14" height="24" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M863,1065 L1333,1065" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1098.0" y="1058" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">15. liberar(claves)</text>
+<rect x="2059" y="1107" width="14" height="24" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.3"/>
+<path d="M863,1111 L2059,1111" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1461.0" y="1104" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">16. confirmarCita(clienta, cita) → cola</text>
+<path d="M849,1155 L379,1155" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="614.0" y="1148" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">cita</text>
+<path d="M365,1185 L137,1185" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="251.0" y="1178" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">17. 201 {citaId, estado: confirmada}</text>
+<path d="M849,1255 L379,1255" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="614.0" y="1248" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">18. Error &quot;el bloqueo expiró&quot;</text>
+<path d="M365,1290 L137,1290" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="251.0" y="1283" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1F2937" text-anchor="middle">19. 409 Conflict {error}</text>
+<path d="M1350,1225 h746 l14,14 v66 h-760 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M2096,1225 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="1362" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Si Redis falla o el bloqueo expira, la restricción EXCLUDE de PostgreSQL</text>
+<text x="1362" y="1263.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">sigue impidiendo dos citas solapadas: Redis acelera, PostgreSQL garantiza.</text>
+</svg>

@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1340" viewBox="0 0 2400 1340">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">[Diagrama de código] AnyColor Salón – módulo Citas</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Modelo C4 · Nivel 4 (UML de clases) · Clean Architecture dentro del módulo · Reserva concurrente (HU01, HU02, RF07)</text>
+<text x="2372" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">Vista de código · v3</text>
+<rect x="30" y="92" width="310" height="1230" fill="#F3F6FB" stroke="#9DB0D0" stroke-width="1.2" stroke-dasharray="6 5"/>
+<text x="185.0" y="116" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#2F5597" text-anchor="middle">PRESENTACIÓN</text>
+<rect x="350" y="92" width="810" height="1230" fill="#F2F8F3" stroke="#A9CDB1" stroke-width="1.2" stroke-dasharray="6 5"/>
+<text x="755.0" y="116" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#2E7D4F" text-anchor="middle">APLICACIÓN</text>
+<rect x="1180" y="92" width="650" height="1230" fill="#FFF9EE" stroke="#E2C68E" stroke-width="1.2" stroke-dasharray="6 5"/>
+<text x="1505.0" y="116" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#B7791F" text-anchor="middle">DOMINIO</text>
+<rect x="1850" y="92" width="520" height="1230" fill="#F7F4FB" stroke="#C2B3DA" stroke-width="1.2" stroke-dasharray="6 5"/>
+<text x="2110.0" y="116" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#6B46A6" text-anchor="middle">INFRAESTRUCTURA</text>
+<rect x="20" y="140" width="2360" height="1170" fill="none" stroke="#2F5597" stroke-width="2"/>
+<rect x="20" y="140" width="190" height="30" fill="#2F5597"/>
+<text x="34" y="161" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">módulo citas</text>
+<rect x="45" y="200" width="280" height="124.16" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="45" y="200" width="280" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="185.0" y="220" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">CitasControlador</text>
+<line x1="45" y1="278.08" x2="325" y2="278.08" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="55" y="251.632" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- bloquear: BloquearHorarioCasoUso</text>
+<text x="55" y="268.672" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- confirmar: ConfirmarCitaCasoUso</text>
+<text x="55" y="297.712" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ postBloqueo(dto): Respuesta</text>
+<text x="55" y="314.752" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ postConfirmacion(dto): Respuesta</text>
+<rect x="365" y="200" width="380" height="148.3" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="365" y="200" width="380" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="555.0" y="220" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ConfirmarCitaCasoUso</text>
+<line x1="365" y1="299.38" x2="745" y2="299.38" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="375" y="252.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- citas: RepositorioCitas</text>
+<text x="375" y="271.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- bloqueos: ServicioBloqueos</text>
+<text x="375" y="289.688" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- notificador: Notificador</text>
+<text x="375" y="320.148" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s: SolicitudConfirmacion)</text>
+<text x="375" y="338.608" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">   : Promise&lt;Cita&gt;</text>
+<rect x="775" y="200" width="380" height="148.3" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="775" y="200" width="380" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="965.0" y="220" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">BloquearHorarioCasoUso</text>
+<line x1="775" y1="299.38" x2="1155" y2="299.38" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="785" y="252.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- citas: RepositorioCitas</text>
+<text x="785" y="271.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- servicios: RepositorioServicios</text>
+<text x="785" y="289.688" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- bloqueos: ServicioBloqueos</text>
+<text x="785" y="320.148" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s: SolicitudBloqueo)</text>
+<text x="785" y="338.608" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">   : Promise&lt;{ rango }&gt;</text>
+<rect x="1200" y="170" width="330" height="267.25" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="170" width="330" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1365.0" y="188" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«entity»</text>
+<text x="1365.0" y="207" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">Cita</text>
+<line x1="1200" y1="318.75" x2="1530" y2="318.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="238.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- id, sedeId, clienteId: string</text>
+<text x="1210" y="255.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- estilistaId, sillonId: string</text>
+<text x="1210" y="273.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- servicioId: string</text>
+<text x="1210" y="291.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- rango: RangoHorario</text>
+<text x="1210" y="309.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- estado: EstadoCita</text>
+<text x="1210" y="338.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ crear(datos): Cita {static}</text>
+<text x="1210" y="356.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ confirmar(): void</text>
+<text x="1210" y="374.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ iniciarAtencion(): void</text>
+<text x="1210" y="392.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ finalizar(): void</text>
+<text x="1210" y="409.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ cancelar(): void</text>
+<text x="1210" y="427.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ocupaHorario(): boolean</text>
+<rect x="1580" y="170" width="235" height="156.75" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1580" y="170" width="235" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1697.5" y="188" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«enumeration»</text>
+<text x="1697.5" y="207" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">EstadoCita</text>
+<line x1="1580" y1="318.75" x2="1815" y2="318.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1590" y="238.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">pendiente</text>
+<text x="1590" y="255.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">confirmada</text>
+<text x="1590" y="273.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">en_atencion</text>
+<text x="1590" y="291.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">finalizada</text>
+<text x="1590" y="309.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">cancelada</text>
+<rect x="1580" y="345" width="235" height="160.75" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1580" y="345" width="235" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1697.5" y="363" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«value object»</text>
+<text x="1697.5" y="382" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RangoHorario</text>
+<line x1="1580" y1="440.5" x2="1815" y2="440.5" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1590" y="413.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ inicio: Date</text>
+<text x="1590" y="430.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ fin: Date</text>
+<text x="1590" y="460.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ crear(inicio, fin) {static}</text>
+<text x="1590" y="478.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ desdeDuracion(i, min) {static}</text>
+<text x="1590" y="496.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ solapaCon(otro): boolean</text>
+<path d="M1530,230 L1580,230" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M1530,400 L1580,400" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<rect x="1200" y="560" width="380" height="85.75" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="560" width="380" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1390.0" y="578" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="1390.0" y="597" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">RepositorioServicios</text>
+<line x1="1200" y1="616.0" x2="1580" y2="616.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="636.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ obtener(id): Promise&lt;Servicio | undefined&gt;</text>
+<rect x="1200" y="679.75" width="380" height="121.25" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="679.75" width="380" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1390.0" y="697.75" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="1390.0" y="716.75" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">RepositorioCitas</text>
+<line x1="1200" y1="735.75" x2="1580" y2="735.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="755.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ guardar(cita): Promise&lt;void&gt;</text>
+<text x="1210" y="773.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ obtener(id): Promise&lt;Cita | undefined&gt;</text>
+<text x="1210" y="791.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ buscarSolapadas(recurso, rango): Promise&lt;Cita[]&gt;</text>
+<rect x="1200" y="835.0" width="380" height="121.25" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="835.0" width="380" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1390.0" y="853.0" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="1390.0" y="872.0" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">ServicioBloqueos</text>
+<line x1="1200" y1="891.0" x2="1580" y2="891.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="911.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ adquirir(clave, titular, ttlMs): Promise&lt;boolean&gt;</text>
+<text x="1210" y="928.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ titularDe(clave): Promise&lt;string | undefined&gt;</text>
+<text x="1210" y="946.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ liberar(clave, titular): Promise&lt;void&gt;</text>
+<rect x="1200" y="990.25" width="380" height="85.75" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="990.25" width="380" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1390.0" y="1008.25" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="1390.0" y="1027.25" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">Notificador</text>
+<line x1="1200" y1="1046.25" x2="1580" y2="1046.25" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="1066.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ confirmarCita(clienteId, citaId): Promise&lt;void&gt;</text>
+<rect x="1200" y="1120.0" width="380" height="107.5" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1200" y="1120.0" width="380" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1390.0" y="1138.0" font-family="Arial, Helvetica, sans-serif" font-size="10.0" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«reglas del dominio»</text>
+<text x="1390.0" y="1157.0" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">bloqueo.modelo</text>
+<line x1="1200" y1="1197.75" x2="1580" y2="1197.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1210" y="1188.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">DURACION_BLOQUEO_MS = 5 × 60 × 1000</text>
+<text x="1210" y="1217.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ claveBloqueo(tipo, recursoId, inicio, fin)</text>
+<path d="M325,250 L365,250" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M300,200 L300,160 L960,160 L960,200" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M600,348.3 L600,767.05 L1200,767.05" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M560,348.3 L560,922.3 L1200,922.3" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M520,348.3 L520,1041.7 L1200,1041.7" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M1080,348.3 L1080,607.1625 L1200,607.1625" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M1030,348.3 L1030,718.55 L1200,718.55" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M980,348.3 L980,873.8 L1200,873.8" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<rect x="1880" y="545" width="460" height="91.5" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1880" y="545" width="460" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="2110.0" y="565" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RepositorioServiciosMemoria</text>
+<line x1="1880" y1="606.75" x2="2340" y2="606.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1890" y="597.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- servicios: Servicio[]</text>
+<text x="1890" y="626.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ obtener(id)</text>
+<path d="M1880,590.75 L1730,590.75 L1730,602.875 L1580,602.875" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<rect x="1880" y="662.5" width="460" height="109.25" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1880" y="662.5" width="460" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="2110.0" y="682.5" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RepositorioCitasMemoria</text>
+<line x1="1880" y1="724.25" x2="2340" y2="724.25" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1890" y="714.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- citas: Map&lt;string, Cita&gt;</text>
+<text x="1890" y="744.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ guardar(cita) · obtener(id)</text>
+<text x="1890" y="762.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ buscarSolapadas(recurso, rango)</text>
+<path d="M1880,717.125 L1770,717.125 L1770,740.375 L1580,740.375" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<rect x="1880" y="797.75" width="460" height="109.25" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1880" y="797.75" width="460" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="2110.0" y="817.75" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ServicioBloqueosRedis</text>
+<line x1="1880" y1="859.5" x2="2340" y2="859.5" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1890" y="849.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- redis: RedisMinimo</text>
+<text x="1890" y="879.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ adquirir(): SET NX PX</text>
+<text x="1890" y="897.45" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ liberar(): script Lua</text>
+<path d="M1880,852.375 L1730,852.375 L1730,883.5 L1580,883.5" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<rect x="1880" y="933.0" width="460" height="91.5" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1880" y="933.0" width="460" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="2110.0" y="953.0" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ServicioBloqueosMemoria</text>
+<line x1="1880" y1="994.75" x2="2340" y2="994.75" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1890" y="985.2" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- reloj: Reloj</text>
+<text x="1890" y="1014.95" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ adquirir · titularDe · liberar</text>
+<path d="M1880,978.75 L1770,978.75 L1770,932.0 L1580,932.0" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<rect x="1880" y="1050.5" width="460" height="69.75" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1880" y="1050.5" width="460" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="2110.0" y="1070.5" font-family="Arial, Helvetica, sans-serif" font-size="14.0" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">NotificadorConsola</text>
+<line x1="1880" y1="1090.5" x2="2340" y2="1090.5" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1890" y="1110.7" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ confirmarCita(clienteId, citaId)</text>
+<path d="M1880,1085.375 L1730,1085.375 L1730,1033.125 L1580,1033.125" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<path d="M45,560 h266 l14,14 v196 h-280 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M311,560 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="57" y="582" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Regla de dependencia</text>
+<text x="57" y="600.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Las flechas apuntan hacia el dominio.</text>
+<text x="57" y="616.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Los casos de uso reciben interfaces por el</text>
+<text x="57" y="632.4000000000001" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">constructor; nunca conocen Redis ni</text>
+<text x="57" y="648.6000000000001" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">PostgreSQL.</text>
+<path d="M45,800 h266 l14,14 v216 h-280 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M311,800 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="57" y="822" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Quién crea qué</text>
+<text x="57" y="840.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">ConfirmarCitaCasoUso crea la Cita con</text>
+<text x="57" y="856.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Cita.crear() y la confirma.</text>
+<text x="57" y="872.4000000000001" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">BloquearHorarioCasoUso calcula el</text>
+<text x="57" y="888.6000000000001" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">RangoHorario con la duración del servicio.</text>
+<path d="M1880,1170 h446 l14,14 v106 h-460 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M2326,1170 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="1892" y="1192" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">RepositorioCitasPostgres (siguiente sprint) implementará RepositorioCitas con</text>
+<text x="1892" y="1208.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">la restricción EXCLUDE anti-solape (ADR-003).</text>
+<rect x="365" y="1110" width="790" height="190" fill="#FFFFFF" stroke="#9A9A9A"/>
+<text x="379" y="1134" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Notación UML</text>
+<path d="M385,1165 L485,1165" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<text x="505" y="1170" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Asociación: guarda una referencia</text>
+<path d="M385,1199 L485,1199" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<text x="505" y="1204" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Realización: implementa la interfaz</text>
+<path d="M385,1233 L485,1233" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<text x="505" y="1238" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Dependencia: usa o crea</text>
+<text x="795" y="1170" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">«interface» en cursiva: contrato sin implementación</text>
+<text x="795" y="1204" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">- privado   + público   {static} método de clase</text>
+<text x="795" y="1238" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Código real: tecnologia/anycolor-core/src</text>
+</svg>

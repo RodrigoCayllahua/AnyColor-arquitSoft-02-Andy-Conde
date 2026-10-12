@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1560" viewBox="0 0 1800 1560">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">[Diagrama de componentes] AnyColor Salón – API AnyColor</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Modelo C4 · Nivel 3 (componentes) · Estilo: monolito modular · Cada módulo con Clean Architecture</text>
+<text x="1772" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">Vista de componentes · v3</text>
+<circle cx="380.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="285" y="130" width="190" height="70" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="380.0" y="165.07500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cliente</text>
+<text x="380.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<circle cx="595.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="500" y="130" width="190" height="70" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="595.0" y="165.07500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Estilista</text>
+<text x="595.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<circle cx="810.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="715" y="130" width="190" height="70" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="810.0" y="165.07500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Cajero</text>
+<text x="810.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<circle cx="1025.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="930" y="130" width="190" height="70" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="1025.0" y="165.07500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Admin. de sede</text>
+<text x="1025.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<circle cx="1240.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<rect x="1145" y="130" width="190" height="70" rx="16" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
+<text x="1240.0" y="165.07500000000002" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">SuperAdmin</text>
+<text x="1240.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
+<rect x="630" y="250" width="360" height="80" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
+<text x="810.0" y="288.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Aplicación web</text>
+<text x="810.0" y="304.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: SPA Next.js]</text>
+<path d="M380,200 L380,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
+<path d="M595,200 L595,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
+<path d="M810,200 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1025,200 L1025,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
+<path d="M1240,200 L1240,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
+<rect x="150" y="380" width="1300" height="770" rx="4" fill="none" stroke="#7A7A7A" stroke-width="1.5" stroke-dasharray="9 6"/>
+<text x="162" y="402" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#1A1A1A"><tspan font-weight="bold">API AnyColor</tspan><tspan fill="#555" font-size="12.5"> [Contenedor: Node.js + NestJS · monolito modular]</tspan></text>
+<rect x="620" y="420" width="380" height="82" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="810.0" y="449.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">API REST</text>
+<text x="810.0" y="465.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: controladores + guards]</text>
+<text x="810.0" y="484.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Rutas /api/v1, JWT, RBAC por sede, idempotencia y auditoría</text>
+<path d="M810,330 L810,420" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="190" y="570" width="1240" height="520" rx="4" fill="none" stroke="#9A9A9A" stroke-width="1.5" stroke-dasharray="3 4"/>
+<text x="202" y="592" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1A1A1A"><tspan font-weight="bold">Módulos de negocio</tspan></text>
+<rect x="215" y="690" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="330.0" y="728.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Usuarios y Sedes</text>
+<text x="330.0" y="744.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="330.0" y="763.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Cuentas, roles, sedes y sillones</text>
+<rect x="535" y="690" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="650.0" y="721.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Catálogo</text>
+<text x="650.0" y="737.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="650.0" y="756.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Servicios, precios, insumos y</text>
+<text x="650.0" y="771.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">estilistas habilitados</text>
+<rect x="855" y="690" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="970.0" y="721.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Citas</text>
+<text x="970.0" y="737.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="970.0" y="756.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Disponibilidad, bloqueo de 5 min y</text>
+<text x="970.0" y="771.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">estados de la cita</text>
+<rect x="1175" y="690" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="1290.0" y="721.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Notificaciones</text>
+<text x="1290.0" y="737.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="1290.0" y="756.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Confirmaciones, recordatorios y</text>
+<text x="1290.0" y="771.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">alertas</text>
+<rect x="215" y="900" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="330.0" y="938.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Reportes</text>
+<text x="330.0" y="954.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="330.0" y="973.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Métricas por sede y consolidadas</text>
+<rect x="535" y="900" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="650.0" y="931.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Personal y Comisiones</text>
+<text x="650.0" y="947.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="650.0" y="966.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Asistencia, turnos y cálculo de</text>
+<text x="650.0" y="981.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">comisiones</text>
+<rect x="855" y="900" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="970.0" y="931.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">POS y Caja</text>
+<text x="970.0" y="947.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="970.0" y="966.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Ventas idempotentes, turnos de caja y</text>
+<text x="970.0" y="981.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">tickets</text>
+<rect x="1175" y="900" width="230" height="100" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.4"/>
+<text x="1290.0" y="938.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="middle">Inventario</text>
+<text x="1290.0" y="954.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="middle">[Componente: módulo]</text>
+<text x="1290.0" y="973.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Stock por sede, ajustes y alertas</text>
+<path d="M810,502 L810,570" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M620,470 L360,470 L360,690" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M855,740 L765,740" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1085,740 L1175,740" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M970,900 L970,790" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M855,950 L765,950" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1085,950 L1175,950" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1290,900 L1290,790" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M600,900 L600,845 L300,845 L300,790" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1500,599 a115.0,14 0 0,1 230,0 v92 a115.0,14 0 0,1 -230,0 z" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
+<path d="M1500,599 a115.0,14 0 0,0 230,0" fill="none" stroke="#36599A" stroke-width="1.4"/>
+<text x="1615.0" y="650.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Caché y bloqueos</text>
+<text x="1615.0" y="666.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: Redis]</text>
+<path d="M680,690 L680,615 L1500,615" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1010,690 L1010,650 L1500,650" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="1500" y="735" width="230" height="100" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
+<text x="1615.0" y="773.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Workers</text>
+<text x="1615.0" y="789.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: Node.js + BullMQ]</text>
+<text x="1615.0" y="808.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Envían WhatsApp / correo</text>
+<path d="M1405,775 L1500,775" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="1500" y="990" width="230" height="100" rx="8" fill="#9A9A9A" stroke="#7E7E7E" stroke-width="1.4"/>
+<text x="1615.0" y="1028.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Pasarela de pagos</text>
+<text x="1615.0" y="1044.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="middle">[Sistema externo]</text>
+<text x="1615.0" y="1063.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Tarjeta y Yape/Plin</text>
+<path d="M1010,1000 L1010,1040 L1500,1040" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M680,1254 a130.0,14 0 0,1 260,0 v112 a130.0,14 0 0,1 -260,0 z" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
+<path d="M680,1254 a130.0,14 0 0,0 260,0" fill="none" stroke="#36599A" stroke-width="1.4"/>
+<text x="810.0" y="1305.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Base de datos</text>
+<text x="810.0" y="1321.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: PostgreSQL]</text>
+<text x="810.0" y="1340.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Citas, ventas, caja, inventario, personal</text>
+<path d="M220,1254 a110.0,14 0 0,1 220,0 v112 a110.0,14 0 0,1 -220,0 z" fill="#E9E9E9" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="7 5"/>
+<path d="M220,1254 a110.0,14 0 0,0 220,0" fill="none" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="330.0" y="1305.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#444444" text-anchor="middle">Réplica de lectura</text>
+<text x="330.0" y="1321.75" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666666" text-anchor="middle">[Contenedor: PostgreSQL]</text>
+<text x="330.0" y="1340.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#444444" text-anchor="middle">Etapa 3</text>
+<path d="M810,1090 L810,1240" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M330,1000 L330,1240" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<rect x="40" y="1420" width="720" height="92" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="52" y="1440" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Leyenda</text>
+<rect x="52" y="1450" width="128" height="26" rx="5" fill="#1F3B66" stroke="#152A4A"/>
+<text x="116.0" y="1467" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Persona</text>
+<rect x="192" y="1450" width="128" height="26" rx="5" fill="#4A72B8" stroke="#36599A"/>
+<text x="256.0" y="1467" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Sistema / contenedor</text>
+<rect x="332" y="1450" width="128" height="26" rx="5" fill="#A9C4EB" stroke="#7E9FD0"/>
+<text x="396.0" y="1467" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#14233A" text-anchor="middle">Componente</text>
+<rect x="472" y="1450" width="128" height="26" rx="5" fill="#9A9A9A" stroke="#7E7E7E"/>
+<text x="536.0" y="1467" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#FFFFFF" text-anchor="middle">Sistema externo</text>
+<rect x="612" y="1450" width="128" height="26" rx="5" fill="#E9E9E9" stroke="#8A8A8A" stroke-dasharray="6 4"/>
+<text x="676.0" y="1467" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#444444" text-anchor="middle">Previsto (etapa futura)</text>
+<text x="52" y="1498" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#444" text-anchor="start">Flecha: relación con verbo y [protocolo] · Línea discontinua: límite de contenedor o elemento futuro</text>
+<path d="M800,1420 h946 l14,14 v104 h-960 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M1746,1420 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="812" y="1442" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Notas</text>
+<text x="812" y="1460.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• Cada componente es un módulo del monolito: todos se despliegan juntos en el contenedor API AnyColor.</text>
+<text x="812" y="1476.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• Un módulo usa a otro solo por su API pública (caso de uso o evento), nunca sus tablas.</text>
+<text x="812" y="1492.4" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">• El Catálogo guarda imágenes en el almacenamiento de objetos (Etapa 2); se omite aquí para no recargar la vista.</text>
+<rect x="682.9475" y="215.8125" width="34.105000000000004" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="700" y="228.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Usan</text>
+<rect x="765.635" y="343.625" width="88.72999999999999" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="810" y="356.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Llama a la API</text>
+<text x="810" y="370.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">[HTTPS/JSON]</text>
+<rect x="753.3875" y="528.8125" width="113.22500000000001" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="810" y="541.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Invoca casos de uso</text>
+<rect x="406.43" y="460.8125" width="127.13999999999997" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="470" y="473.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Valida JWT, rol y sede</text>
+<rect x="783.4025" y="723.625" width="53.19499999999999" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="810.0" y="736.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Consulta</text>
+<text x="810.0" y="750.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">duración</text>
+<rect x="1095.18" y="723.625" width="69.64" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1130.0" y="736.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Publica cita</text>
+<text x="1130.0" y="750.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">confirmada</text>
+<rect x="933.455" y="828.625" width="73.09" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="970" y="841.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Cobra la cita</text>
+<text x="970" y="855.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">atendida</text>
+<rect x="782.425" y="933.625" width="55.150000000000006" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="810.0" y="946.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Registra</text>
+<text x="810.0" y="960.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">comisión</text>
+<rect x="1099.0325" y="933.625" width="61.935" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1130.0" y="946.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Descuenta</text>
+<text x="1130.0" y="960.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">insumos</text>
+<rect x="1259.4925" y="828.625" width="61.015" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1290" y="841.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Alerta de</text>
+<text x="1290" y="855.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">stock bajo</text>
+<rect x="397.815" y="835.8125" width="104.36999999999999" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="450" y="848.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Consulta estilistas</text>
+<rect x="1266.4875" y="605.8125" width="127.02500000000002" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1330" y="618.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Cachea catálogo [TCP]</text>
+<rect x="1224.575" y="640.8125" width="190.85" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1320" y="653.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Bloqueo 5 min · SET NX PX [TCP]</text>
+<rect x="1443.345" y="758.625" width="53.31" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="1470" y="771.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Encola</text>
+<text x="1470" y="785.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">[BullMQ]</text>
+<rect x="1109.1325" y="1030.8125" width="121.73499999999999" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1170" y="1043.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Cobra [HTTPS/REST]</text>
+<rect x="737.69" y="1163.625" width="144.61999999999998" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="810" y="1176.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Cada módulo lee y escribe</text>
+<text x="810" y="1190.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">solo sus tablas [SQL]</text>
+<rect x="292.0175" y="1163.625" width="75.965" height="32.75" fill="#FFFFFF" opacity="0.96"/>
+<text x="330" y="1176.125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">Lee métricas</text>
+<text x="330" y="1190.5" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">[SQL]</text>
+</svg>
