@@ -1,6 +1,6 @@
 # Estilo arquitectónico seleccionado
 
-**Estilo:** Monolito modular (backend) con organización interna en capas, más un frontend SPA desacoplado por API REST.
+**Estilo:** monolito modular (backend) con organización interna en capas, más un frontend SPA desacoplado por API REST. Decisión registrada en ADR-001 y ADR-010 ([07-decisiones-arquitectonicas.md](../01-analisis-de-sistema/07-decisiones-arquitectonicas.md)).
 
 ## Justificación
 
@@ -12,66 +12,19 @@
 | Costo y operación | Una sola unidad de despliegue para el MVP. |
 | Evolución | Los módulos más calientes (Citas, Reportes) pueden extraerse después. |
 
-## Diagrama del estilo (vista de contenedores y módulos)
+## Diagrama del estilo
 
-```mermaid
-flowchart TD
-    Cliente([Cliente])
-    Estilista([Estilista])
-    Cajero([Cajero])
-    Admin([Admin de sede / SuperAdmin])
+![Estilo monolito modular + SPA](../../img/estilo-monolito-modular.png)
 
-    Web["Frontend Web SPA<br><i>Next.js / React - responsive</i>"]
+> Archivo editable: [`img/fuentes/estilo-monolito-modular.drawio`](../../img/fuentes/estilo-monolito-modular.drawio)
 
-    Cliente --> Web
-    Estilista --> Web
-    Cajero --> Web
-    Admin --> Web
+## Alternativas evaluadas
 
-    CDN["CDN / WAF<br><i>Cloudflare</i>"]
-    LB["Balanceador de carga"]
-
-    Web -->|HTTPS| CDN --> LB
-
-    subgraph Monolito["Backend modular - NestJS (N instancias sin estado)"]
-        direction TB
-        MW["Transversales: JWT, RBAC por sede, validacion, idempotencia, auditoria, logs"]
-
-        subgraph Modulos["Modulos de negocio"]
-            direction LR
-            U["Usuarios y Sedes"]
-            C["Catalogo"]
-            CI["Citas (motor de reservas)"]
-            P["POS y Caja"]
-            I["Inventario"]
-            PE["Personal y Comisiones"]
-            R["Reportes"]
-        end
-
-        MW --> Modulos
-        CI -.-> C
-        P -.-> I
-        P -.-> PE
-        P -.-> CI
-    end
-
-    LB --> MW
-
-    PG[("PostgreSQL<br>fuente de verdad")]
-    RD[("Redis<br>bloqueos 5 min + cache")]
-    Q["Cola BullMQ"]
-    W["Workers<br>recordatorios, tickets, exportes"]
-    S3[("Almacen de objetos<br>S3 / Cloudinary")]
-    Pago["Pasarela de pagos<br>Yape/Plin, tarjeta"]
-    Msg["WhatsApp / Email"]
-
-    Modulos --> PG
-    CI --> RD
-    C --> RD
-    Modulos --> Q --> W --> Msg
-    C --> S3
-    P <--> Pago
-```
+| Alternativa | Por qué se descartó |
+| --- | --- |
+| Microservicios | Venta, inventario, caja y comisión necesitan una transacción local; separarlos obliga a consistencia eventual, más despliegues y más latencia. Costo injustificado para un equipo de una persona. |
+| Monolito sin módulos | Es más rápido al inicio, pero mezcla responsabilidades y rompe la mantenibilidad (DA06). |
+| Páginas generadas en el servidor | Acopla interfaz y backend; la SPA permite desplegar el frontend en CDN y evolucionarlo por separado (ADR-010). |
 
 ## Límites del estilo
 

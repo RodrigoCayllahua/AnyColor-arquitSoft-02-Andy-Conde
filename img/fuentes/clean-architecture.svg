@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1000" viewBox="0 0 1760 1000">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Enfoque arquitectónico · Clean Architecture en AnyColor Salón</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Las dependencias apuntan hacia el dominio: Presentación → Aplicación → Dominio ← Infraestructura (ADR-002)</text>
+<text x="1732" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
+<circle cx="470" cy="560" r="400" fill="#E8EEF8" stroke="#7E9FD0" stroke-width="2"/>
+<circle cx="470" cy="560" r="285" fill="#EAF5EC" stroke="#6AA978" stroke-width="2"/>
+<circle cx="470" cy="560" r="165" fill="#FFF3D6" stroke="#C9A54A" stroke-width="2"/>
+<line x1="470" y1="160" x2="470" y2="275" stroke="#7E9FD0" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="470" y1="845" x2="470" y2="960" stroke="#7E9FD0" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="270" y="260" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#2F5597" text-anchor="middle">PRESENTACIÓN</text>
+<text x="270" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#2F5597" text-anchor="middle">controladores · DTO · guards</text>
+<text x="670" y="260" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#6B46A6" text-anchor="middle">INFRAESTRUCTURA</text>
+<text x="670" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#6B46A6" text-anchor="middle">PostgreSQL · Redis · pagos</text>
+<text x="470" y="345" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#2E7D4F" text-anchor="middle">APLICACIÓN</text>
+<text x="470" y="365" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#2E7D4F" text-anchor="middle">casos de uso</text>
+<text x="470" y="530" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="middle">DOMINIO</text>
+<text x="470" y="554" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="middle">Cita · RangoHorario · Venta</text>
+<text x="470" y="574" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="middle">ItemInventario · TurnoCaja</text>
+<text x="470" y="600" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#5A4300" text-anchor="middle">contratos (puertos)</text>
+<path d="M134.6661187964395,716.3687568440587 L306.864598333403,636.0712871133259" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ah)"/>
+<path d="M805.3338812035605,716.3687568440587 L633.135401666597,636.0712871133259" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ah)"/>
+<path d="M166.913743613073,347.776718550113 L322.5526320279814,456.7562414568117" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ah)"/>
+<path d="M773.086256386927,347.77671855011295 L617.4473679720186,456.7562414568117" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ah)"/>
+<rect x="920" y="150" width="790" height="35" fill="#2F5597" stroke="#C5CEDB"/>
+<text x="930" y="172" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Capa</text>
+<text x="1100" y="172" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Qué contiene en tecnologia/anycolor-core/src</text>
+<text x="1570" y="172" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Puede usar</text>
+<rect x="920" y="185" width="790" height="69" fill="#FFFFFF" stroke="#C5CEDB"/>
+<text x="930" y="207" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1E2B3C" text-anchor="start">Dominio</text>
+<text x="1100" y="207" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Cita (estados), RangoHorario, ItemInventario, Venta, TurnoCaja,</text>
+<text x="1100" y="224" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">calcularComision; contratos RepositorioCitas, ServicioBloqueos,</text>
+<text x="1100" y="241" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">ProcesadorPagos, Notificador</text>
+<text x="1570" y="207" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Nada externo</text>
+<rect x="920" y="254" width="790" height="35" fill="#F6F8FB" stroke="#C5CEDB"/>
+<text x="930" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1E2B3C" text-anchor="start">Aplicación</text>
+<text x="1100" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">BloquearHorarioCasoUso, ConfirmarCitaCasoUso, RegistrarVentaCasoUso</text>
+<text x="1570" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Dominio</text>
+<rect x="920" y="289" width="790" height="52" fill="#FFFFFF" stroke="#C5CEDB"/>
+<text x="930" y="311" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1E2B3C" text-anchor="start">Infraestructura</text>
+<text x="1100" y="311" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">ServicioBloqueosRedis, repositorios en memoria (pruebas),</text>
+<text x="1100" y="328" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">ProcesadorPagosSimulado, NotificadorConsola</text>
+<text x="1570" y="311" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Dominio + librerías</text>
+<rect x="920" y="341" width="790" height="35" fill="#F6F8FB" stroke="#C5CEDB"/>
+<text x="930" y="363" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1E2B3C" text-anchor="start">Presentación</text>
+<text x="1100" y="363" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">CitasControlador (DTO ⇄ caso de uso)</text>
+<text x="1570" y="363" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Aplicación</text>
+<path d="M920,406 h776 l14,14 v96 h-790 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M1696,406 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="932" y="428" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Qué gana el proyecto</text>
+<text x="932" y="446.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Cambiar Niubiz por Izipay: solo un adaptador de infraestructura (AC07).</text>
+<text x="932" y="462.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Cambiar el bloqueo de 5 a 10 minutos: una constante en bloqueo.modelo.</text>
+<text x="932" y="478.4" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">16 pruebas del dominio y casos de uso corren sin base de datos ni Redis (npm run pruebas).</text>
+<rect x="307.71999999999986" y="900.5" width="324.5600000000003" height="19.0" fill="#E8EEF8" opacity="0.96"/>
+<text x="470" y="913.5" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#C0392B" text-anchor="middle">Las flechas rojas: dirección permitida de las dependencias</text>
+</svg>

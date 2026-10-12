@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1010" viewBox="0 0 1800 1010">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Componentes arquitectónicos · de dónde sale cada uno</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Cada componente de la arquitectura con su responsabilidad y la trazabilidad a historias, requisitos, drivers y decisiones (ADR)</text>
+<text x="1772" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
+<rect x="30" y="95" width="1740" height="215" rx="6" fill="#F7F9FC" stroke="#C5CEDB" stroke-dasharray="6 5"/>
+<text x="48" y="121" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#41506A" text-anchor="start">ENTRADA Y PRESENTACIÓN</text>
+<rect x="50" y="140" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#36599A" stroke-width="1.5"/>
+<rect x="50" y="140" width="410" height="58" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.5"/>
+<rect x="51" y="180" width="408" height="18" fill="#4A72B8"/>
+<text x="66" y="166" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Aplicación web</text>
+<text x="66" y="186" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="start">[Contenedor · SPA Next.js]</text>
+<text x="66" y="224" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Pantallas de reserva, POS y paneles</text>
+<text x="66" y="252" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="126" y="252" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU01 · HU03 · HU07 · RC01 · RC05 · ADR-010</text>
+<rect x="480" y="140" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="480" y="140" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="481" y="180" width="408" height="18" fill="#A9C4EB"/>
+<text x="496" y="166" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">API REST + transversales</text>
+<text x="496" y="186" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Componente]</text>
+<text x="496" y="224" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">JWT, RBAC por sede, idempotencia, auditoría</text>
+<text x="496" y="252" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="556" y="252" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">RF02 · RF23 · AC04 · AC06 · DA04 · ADR-005 ·</text>
+<text x="556" y="268" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">ADR-008</text>
+<rect x="30" y="330" width="1740" height="380" rx="6" fill="#F7F9FC" stroke="#C5CEDB" stroke-dasharray="6 5"/>
+<text x="48" y="356" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#41506A" text-anchor="start">MÓDULOS DE NEGOCIO (monolito modular)</text>
+<rect x="50" y="375" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="50" y="375" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="51" y="415" width="408" height="18" fill="#A9C4EB"/>
+<text x="66" y="401" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Usuarios y Sedes</text>
+<text x="66" y="421" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="66" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Cuentas, roles, sedes y sillones</text>
+<text x="66" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="126" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU10 · RF01–RF03 · DA04 · ADR-005</text>
+<rect x="480" y="375" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="480" y="375" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="481" y="415" width="408" height="18" fill="#A9C4EB"/>
+<text x="496" y="401" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Catálogo</text>
+<text x="496" y="421" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="496" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Servicios, precios, insumos</text>
+<text x="496" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="556" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU11 · RF04 · AC01 · DA05</text>
+<rect x="910" y="375" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="910" y="375" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="911" y="415" width="408" height="18" fill="#A9C4EB"/>
+<text x="926" y="401" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Citas (motor de reservas)</text>
+<text x="926" y="421" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="926" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Disponibilidad y bloqueo de 5 min</text>
+<text x="926" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="986" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU01 · HU02 · RF05–RF08 · DA01 · ADR-003/004</text>
+<rect x="1340" y="375" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="1340" y="375" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="1341" y="415" width="408" height="18" fill="#A9C4EB"/>
+<text x="1356" y="401" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">POS y Caja</text>
+<text x="1356" y="421" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="1356" y="459" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Ventas idempotentes y arqueo</text>
+<text x="1356" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="1416" y="487" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU03 · HU04 · RF09–RF11 · RF18 · DA03 · ADR-008</text>
+<rect x="50" y="540" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="50" y="540" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="51" y="580" width="408" height="18" fill="#A9C4EB"/>
+<text x="66" y="566" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Inventario</text>
+<text x="66" y="586" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="66" y="624" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Stock por sede y alertas</text>
+<text x="66" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="126" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU05 · RF12–RF14 · AC05 · DA03</text>
+<rect x="480" y="540" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="480" y="540" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="481" y="580" width="408" height="18" fill="#A9C4EB"/>
+<text x="496" y="566" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Personal y Comisiones</text>
+<text x="496" y="586" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="496" y="624" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Asistencia y comisión automática</text>
+<text x="496" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="556" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU06 · HU07 · RF15–RF17</text>
+<rect x="910" y="540" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="910" y="540" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="911" y="580" width="408" height="18" fill="#A9C4EB"/>
+<text x="926" y="566" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Reportes</text>
+<text x="926" y="586" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="926" y="624" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Métricas por sede y consolidadas</text>
+<text x="926" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="986" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU08 · HU09 · RF19–RF21 · RF24 · DA08</text>
+<rect x="1340" y="540" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="1340" y="540" width="410" height="58" rx="8" fill="#A9C4EB" stroke="#7E9FD0" stroke-width="1.5"/>
+<rect x="1341" y="580" width="408" height="18" fill="#A9C4EB"/>
+<text x="1356" y="566" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#14233A" text-anchor="start">Notificaciones</text>
+<text x="1356" y="586" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#33496B" text-anchor="start">[Módulo]</text>
+<text x="1356" y="624" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Confirmaciones y recordatorios</text>
+<text x="1356" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="1416" y="652" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">HU12 · RF22 · DA07 · ADR-007</text>
+<rect x="30" y="735" width="1740" height="215" rx="6" fill="#F7F9FC" stroke="#C5CEDB" stroke-dasharray="6 5"/>
+<text x="48" y="761" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#41506A" text-anchor="start">DATOS E INTEGRACIÓN</text>
+<rect x="50" y="780" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#36599A" stroke-width="1.5"/>
+<rect x="50" y="780" width="410" height="58" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.5"/>
+<rect x="51" y="820" width="408" height="18" fill="#4A72B8"/>
+<text x="66" y="806" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">PostgreSQL</text>
+<text x="66" y="826" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="start">[Contenedor · BD]</text>
+<text x="66" y="864" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Fuente de verdad ACID + EXCLUDE</text>
+<text x="66" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="126" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">RC03 · AC05 · DA01 · DA03 · ADR-003</text>
+<rect x="480" y="780" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#36599A" stroke-width="1.5"/>
+<rect x="480" y="780" width="410" height="58" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.5"/>
+<rect x="481" y="820" width="408" height="18" fill="#4A72B8"/>
+<text x="496" y="806" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Redis</text>
+<text x="496" y="826" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="start">[Contenedor · caché]</text>
+<text x="496" y="864" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Bloqueos SET NX PX y caché</text>
+<text x="496" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="556" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">RC04 · AC01 · DA01 · DA05 · ADR-004</text>
+<rect x="910" y="780" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#36599A" stroke-width="1.5"/>
+<rect x="910" y="780" width="410" height="58" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.5"/>
+<rect x="911" y="820" width="408" height="18" fill="#4A72B8"/>
+<text x="926" y="806" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Cola + Workers</text>
+<text x="926" y="826" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="start">[Contenedor · BullMQ]</text>
+<text x="926" y="864" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Tareas en segundo plano</text>
+<text x="926" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="986" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">RF22 · RF24 · DA05 · DA07 · ADR-007</text>
+<rect x="1340" y="780" width="410" height="148" rx="8" fill="#FFFFFF" stroke="#7E7E7E" stroke-width="1.5"/>
+<rect x="1340" y="780" width="410" height="58" rx="8" fill="#9A9A9A" stroke="#7E7E7E" stroke-width="1.5"/>
+<rect x="1341" y="820" width="408" height="18" fill="#9A9A9A"/>
+<text x="1356" y="806" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">Adaptadores externos</text>
+<text x="1356" y="826" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="start">[Infraestructura]</text>
+<text x="1356" y="864" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1E2B3C" text-anchor="start">Pagos, mensajería, almacén</text>
+<text x="1356" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#8A5A00" text-anchor="start">Sale de:</text>
+<text x="1416" y="892" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#5A4300" text-anchor="start">RC08 · RC09 · AC07 · DA07 · ADR-006</text>
+<text x="30" y="990" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#555" text-anchor="start">HU: historia de usuario · RF: requisito funcional · AC: atributo de calidad · RC: restricción · DA: driver arquitectónico · ADR: decisión arquitectónica</text>
+</svg>

@@ -25,62 +25,15 @@
 
 ## Diagrama
 
-```mermaid
-flowchart LR
-    Usuario([Cliente / Cajero / Estilista / Admin])
-    Ext["Servicios externos<br>Pasarela de pagos, WhatsApp, S3"]
+![Clean Architecture aplicada a AnyColor Salón](../../img/clean-architecture.png)
 
-    subgraph App["AnyColor Salon - backend (src/)"]
-        subgraph Pres["1. PRESENTACION"]
-            Ctl["Controladores REST + DTO<br><b>CitasControlador</b>"]
-            Guard["Guards: JWT + RBAC + sede"]
-        end
+## ¿Por qué Clean Architecture y no Hexagonal?
 
-        subgraph Apl["2. APLICACION - casos de uso"]
-            CU1["<b>BloquearHorario</b>"]
-            CU2["<b>ConfirmarCita</b>"]
-            CU3["<b>RegistrarVenta</b>"]
-        end
-
-        subgraph Dom["3. DOMINIO - nucleo sin dependencias"]
-            subgraph Mod["Modelos y reglas"]
-                E1["Cita - estados"]
-                E2["RangoHorario - solapes"]
-                E3["ItemInventario - sin stock negativo"]
-                E4["Venta - idempotente"]
-                E5["TurnoCaja - arqueo"]
-                E6["Comision"]
-            end
-            subgraph Con["Contratos (puertos)"]
-                P1["RepositorioCitas / Inventario / Ventas"]
-                P2["ServicioBloqueos"]
-                P3["ProcesadorPagos"]
-                P4["Notificador"]
-            end
-        end
-
-        subgraph Inf["4. INFRAESTRUCTURA - adaptadores"]
-            A1["PostgreSQL<br>(repositorios)"]
-            A2["Redis<br>ServicioBloqueosRedis"]
-            A3["Niubiz / Yape / Izipay"]
-            A4["WhatsApp / correo"]
-            A5["Memoria + simulados<br>(pruebas)"]
-        end
-
-        Raiz["Raiz de composicion<br>unico lugar que elige adaptadores"]
-    end
-
-    Usuario -->|HTTPS| Pres
-    Pres --> Apl
-    Apl --> Dom
-    A1 -.->|implementa| P1
-    A2 -.->|implementa| P2
-    A3 -.->|implementa| P3
-    A4 -.->|implementa| P4
-    A5 -.->|implementa| Con
-    Raiz --> Inf
-    Inf --> Ext
-```
+| Criterio | Clean Architecture | Arquitectura hexagonal |
+| --- | --- | --- |
+| Idea central | Capas concéntricas; las dependencias apuntan al dominio | Núcleo con puertos; adaptadores de entrada y salida alrededor |
+| Separación de casos de uso | Capa explícita de **aplicación** | Los casos de uso quedan dentro del núcleo |
+| En AnyColor | Se usa: los casos de uso (BloquearHorario, ConfirmarCita, RegistrarVenta) son el centro de la explicación y se prueban solos | Sus ideas se conservan: los contratos del dominio son los *puertos* y la infraestructura son los *adaptadores* |
 
 ## Ejemplo: qué cambia si cambia la tecnología
 

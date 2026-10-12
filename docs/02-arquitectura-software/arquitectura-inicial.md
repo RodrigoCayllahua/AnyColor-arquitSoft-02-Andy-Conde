@@ -1,82 +1,32 @@
-# Arquitectura inicial de AnyColor Salón
+# Arquitectura inicial del sistema
 
-## Arquitectura en tres capas
+## Diagrama de arquitectura
 
-```mermaid
-flowchart TB
+![Arquitectura inicial en tres capas de AnyColor Salón](../../img/arquitectura-inicial.png)
 
-    U[Cliente]
-    E[Estilista]
-    C[Cajero]
-    A[Administrador]
-
-    subgraph PRESENTACION["Capa de Presentación"]
-        WEB["Aplicación Web Responsive"]
-        API["API REST / JSON (HTTPS)"]
-    end
-
-    subgraph NEGOCIO["Capa de Lógica de Negocio"]
-        AUTH["Auth y RBAC"]
-        CAT["Catálogo y Servicios"]
-        BOOK["Motor de Reservas"]
-        POS["POS y Caja"]
-        INV["Gestión de Inventario"]
-        STAFF["Gestión de Personal"]
-        REPORT["Reportes"]
-    end
-
-    subgraph DATOS["Capa de Datos"]
-        DB[("PostgreSQL")]
-        REDIS[("Redis")]
-    end
-
-    EXT1["Servicio de Pagos"]
-    EXT2["Servicio de Mensajería"]
-    EXT3["Almacén de objetos"]
-
-    U --> WEB
-    E --> WEB
-    C --> WEB
-    A --> WEB
-
-    WEB --> API
-    API --> AUTH
-    API --> CAT
-    API --> BOOK
-    API --> POS
-    API --> INV
-    API --> STAFF
-    API --> REPORT
-
-    AUTH --> DB
-    CAT --> DB
-    CAT --> REDIS
-    CAT --> EXT3
-    BOOK --> DB
-    BOOK --> REDIS
-    POS --> DB
-    INV --> DB
-    STAFF --> DB
-    REPORT --> DB
-
-    POS --> EXT1
-    BOOK --> EXT2
-```
+> Archivo editable: [`img/fuentes/arquitectura-inicial.drawio`](../../img/fuentes/arquitectura-inicial.drawio)
 
 ## Descripción
 
-### Capa de presentación
+La arquitectura inicial organiza la solución en tres capas y un grupo de sistemas externos:
 
-Contiene la aplicación web responsive utilizada por clientes, estilistas, cajeros y administradores.
+| Capa | Elementos | Responsabilidad |
+|---|---|---|
+| **Presentación** | Aplicación web responsive, API REST/JSON | Permite que clientes, estilistas, cajeros y administradores usen el sistema desde el navegador; la API recibe las peticiones por HTTPS con token JWT. |
+| **Lógica de negocio** | Auth y RBAC, Catálogo, Motor de citas, POS y caja, Inventario, Personal y comisiones, Reportes, Notificaciones | Aplica las reglas del salón: reservas sin cruces, ventas, stock por sede, comisiones y reportes. |
+| **Datos** | PostgreSQL, Redis | PostgreSQL guarda la información transaccional (ACID). Redis mantiene los bloqueos temporales de 5 minutos y la caché del catálogo. |
+| **Sistemas externos** | Pasarela de pagos, mensajería, almacén de objetos | Se conectan mediante adaptadores para poder cambiarlos sin tocar la lógica de negocio. |
 
-### Capa de lógica de negocio
+## Reglas de la vista
 
-Contiene las reglas principales del sistema: autenticación, reservas, ventas, inventario, personal y reportes.
+- Cada capa solo usa a la capa inmediata inferior: la aplicación web nunca accede a PostgreSQL ni a Redis (RC05).
+- Toda la información pertenece a una sede (RC02), por eso Auth y RBAC filtra cada operación por rol y sede.
+- Las integraciones externas pasan siempre por un adaptador (RC08).
 
-### Capa de datos
+## Evolución
 
-PostgreSQL almacena la información transaccional. Redis permite implementar caché y bloqueos temporales para controlar la concurrencia de las reservas.
+Esta vista es el punto de partida. A partir de los drivers arquitectónicos se refinó en:
 
-### Sistemas externos
-
-El sistema puede integrarse con servicios externos de pago y mensajería.
+1. el **estilo** monolito modular con API sin estado ([estilo-arquitectonico.md](estilo-arquitectonico.md));
+2. el **enfoque** Clean Architecture dentro de cada módulo ([enfoque-arquitectonico.md](enfoque-arquitectonico.md));
+3. los **componentes arquitectónicos** con su trazabilidad ([componentes-arquitectonicos.md](componentes-arquitectonicos.md)).
