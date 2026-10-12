@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="770" viewBox="0 0 1700 770">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Diagrama de paquetes · módulo Citas</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Organización de carpetas dentro de un módulo y regla de dependencia (solo se importa hacia el dominio)</text>
+<text x="1672" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
+<rect x="60" y="140" width="148.5" height="28" fill="#3E64A8" />
+<rect x="60" y="168" width="330" height="212" fill="#EEF3FB" stroke="#3E64A8" stroke-width="2"/>
+<text x="72" y="160" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">presentacion/</text>
+<text x="78" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ citas.controlador.ts</text>
+<rect x="470" y="140" width="162.0" height="28" fill="#3C8A57" />
+<rect x="470" y="168" width="360" height="212" fill="#EEF7F0" stroke="#3C8A57" stroke-width="2"/>
+<text x="482" y="160" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">aplicacion/</text>
+<text x="488" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ bloquear-horario.caso-uso.ts</text>
+<text x="488" y="238" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ confirmar-cita.caso-uso.ts</text>
+<rect x="910" y="140" width="171.0" height="28" fill="#C98A1E" />
+<rect x="910" y="168" width="380" height="392" fill="#FFF7E8" stroke="#C98A1E" stroke-width="2"/>
+<text x="922" y="160" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">dominio/</text>
+<text x="928" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ modelos/cita.modelo.ts</text>
+<text x="928" y="238" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ modelos/rango-horario.ts</text>
+<text x="928" y="266" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ modelos/bloqueo.modelo.ts</text>
+<text x="928" y="294" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ modelos/servicio.modelo.ts</text>
+<text x="928" y="322" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ contratos/repositorios.contrato.ts</text>
+<text x="928" y="350" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ contratos/servicios-externos.contrato.ts</text>
+<rect x="1360" y="140" width="135.0" height="28" fill="#6B46A6" />
+<rect x="1360" y="168" width="300" height="392" fill="#F7F4FB" stroke="#6B46A6" stroke-width="2"/>
+<text x="1372" y="160" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">infraestructura/</text>
+<text x="1378" y="210" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ servicio-bloqueos-redis.ts</text>
+<text x="1378" y="238" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ servicio-bloqueos-memoria.ts</text>
+<text x="1378" y="266" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ repositorios-memoria.ts</text>
+<text x="1378" y="294" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ adaptadores-simulados.ts</text>
+<path d="M390,260 L470,260" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<path d="M830,260 L910,260" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<path d="M1360,350 L1290,350" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<rect x="470" y="450" width="162.0" height="28" fill="#6E6E6E" />
+<rect x="470" y="478" width="360" height="122" fill="#F4F4F4" stroke="#6E6E6E" stroke-width="2"/>
+<text x="482" y="470" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">composición (raíz)</text>
+<text x="488" y="520" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">▪ crea los adaptadores concretos y</text>
+<text x="488" y="546" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">   los inyecta en los casos de uso</text>
+<path d="M830,580 L1510,580 L1510,560" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<path d="M560,450 L560,380" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+<path d="M60,640 h1586 l14,14 v76 h-1600 z" fill="#FFFBE8" stroke="#C7B25A" stroke-width="1.2"/>
+<path d="M1646,640 v14 h14" fill="none" stroke="#C7B25A" stroke-width="1.2"/>
+<text x="72" y="662" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#3A3A3A" text-anchor="start">Cómo comprobarlo</text>
+<text x="72" y="680.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">Revisar los import de dominio/: no debe aparecer nada de infraestructura/, ni ioredis, pg, NestJS o Next.js.</text>
+<text x="72" y="696.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#3A3A3A" text-anchor="start">npm run pruebas compila dominio/ y aplicacion/ con adaptadores en memoria: si el dominio dependiera de una tecnología, las pruebas no correrían sin ella.</text>
+<rect x="403.7475" y="230.8125" width="52.505" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="430" y="243.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">«import»</text>
+<rect x="843.7475" y="230.8125" width="52.505" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="870" y="243.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">«import»</text>
+<rect x="1284.7175" y="320.8125" width="80.56500000000001" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1325" y="333.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">«implementa»</text>
+<rect x="1038.04" y="570.8125" width="123.92" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="1100" y="583.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">elige Redis o memoria</text>
+</svg>

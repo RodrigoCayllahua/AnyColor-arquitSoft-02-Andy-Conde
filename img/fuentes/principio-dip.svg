@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="760" viewBox="0 0 1700 760">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Principio de inversión de dependencias (DIP) · bloqueo de horarios</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">El caso de uso (alto nivel) y Redis (bajo nivel) dependen de la misma abstracción, que vive en el dominio</text>
+<text x="1672" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
+<rect x="40" y="110" width="700" height="600" rx="8" fill="#FDF1F0" stroke="#D9A39C" stroke-dasharray="6 5"/>
+<text x="60" y="140" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#A33A2E" text-anchor="start">Sin DIP (acoplado)</text>
+<rect x="160" y="200" width="420" height="92.92" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="160" y="200" width="420" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="370.0" y="220" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">BloquearHorarioCasoUso</text>
+<line x1="160" y1="262.46" x2="580" y2="262.46" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="170" y="252.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- redis: Redis  (ioredis)</text>
+<text x="170" y="283.22799999999995" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s)</text>
+<rect x="160" y="450" width="420" height="86.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="160" y="450" width="420" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="370.0" y="468" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«librería»</text>
+<text x="370.0" y="487" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">Redis</text>
+<line x1="160" y1="506.0" x2="580" y2="506.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="170" y="526.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">set(clave, valor, &quot;PX&quot;, ms, &quot;NX&quot;)</text>
+<path d="M370,292.92 L370,450" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<text x="80" y="640" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#A33A2E" text-anchor="start">✗ Para probar se necesita Redis encendido.</text>
+<text x="80" y="666" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#A33A2E" text-anchor="start">✗ Cambiar de tecnología obliga a tocar el caso de uso.</text>
+<rect x="790" y="110" width="870" height="600" rx="8" fill="#F0F8F2" stroke="#9CCBA8" stroke-dasharray="6 5"/>
+<text x="810" y="140" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#2E7D4F" text-anchor="start">Con DIP (AnyColor)</text>
+<rect x="1020" y="175" width="420" height="92.92" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1020" y="175" width="420" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1230.0" y="195" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">BloquearHorarioCasoUso</text>
+<line x1="1020" y1="237.46" x2="1440" y2="237.46" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1030" y="227.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- bloqueos: ServicioBloqueos</text>
+<text x="1030" y="258.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s)</text>
+<rect x="1020" y="345" width="420" height="123.38" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1020" y="345" width="420" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1230.0" y="363" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface · dominio»</text>
+<text x="1230.0" y="382" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">ServicioBloqueos</text>
+<line x1="1020" y1="401.0" x2="1440" y2="401.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1030" y="421.76800000000003" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ adquirir(clave, titular, ttlMs)</text>
+<text x="1030" y="440.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ titularDe(clave)</text>
+<text x="1030" y="458.688" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ liberar(clave, titular)</text>
+<rect x="830" y="560" width="370" height="86.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="830" y="560" width="370" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1015.0" y="578" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«infraestructura»</text>
+<text x="1015.0" y="597" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ServicioBloqueosRedis</text>
+<line x1="830" y1="616.0" x2="1200" y2="616.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="840" y="636.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">SET NX PX · script Lua</text>
+<rect x="1260" y="560" width="370" height="86.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1260" y="560" width="370" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1445.0" y="578" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«pruebas»</text>
+<text x="1445.0" y="597" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ServicioBloqueosMemoria</text>
+<line x1="1260" y1="616.0" x2="1630" y2="616.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1270" y="636.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">Map + reloj simulado</text>
+<path d="M1230,267.92 L1230,345" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M1015,560 L1015,530 L1180,530 L1180,468.38" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<path d="M1445,560 L1445,530 L1280,530 L1280,468.38" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<text x="810" y="690" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#2E7D4F" text-anchor="start">✓ Las pruebas usan la versión en memoria; producción usa Redis. El caso de uso no cambia.</text>
+<rect x="311.95" y="370.8125" width="116.09999999999998" height="18.375" fill="#FFFFFF" opacity="0.96"/>
+<text x="370" y="383.3125" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#333" text-anchor="middle">importa directamente</text>
+</svg>

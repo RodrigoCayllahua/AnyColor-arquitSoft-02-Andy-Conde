@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="820" viewBox="0 0 1760 820">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4D4D4D"/></marker>
+<marker id="ao" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4D4D4D" stroke-width="1.4"/></marker>
+<marker id="at" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M1,1 L13,7 L1,13 z" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.3"/></marker>
+<marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Patrones de diseño aplicados · AnyColor Salón</text>
+<text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Adapter, Repository y método de fábrica: dónde se usan y qué problema resuelven</text>
+<text x="1732" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
+<rect x="30" y="100" width="540" height="690" rx="8" fill="#EEF3FB" stroke="#3E64A8" stroke-dasharray="6 5"/>
+<text x="50" y="132" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#3E64A8" text-anchor="start">Adapter · pagos</text>
+<rect x="610" y="100" width="540" height="690" rx="8" fill="#FFF7E8" stroke="#C98A1E" stroke-dasharray="6 5"/>
+<text x="630" y="132" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#C98A1E" text-anchor="start">Repository · citas</text>
+<rect x="1190" y="100" width="540" height="690" rx="8" fill="#EEF7F0" stroke="#3C8A57" stroke-dasharray="6 5"/>
+<text x="1210" y="132" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#3C8A57" text-anchor="start">Método de fábrica · Cita</text>
+<rect x="140" y="165" width="320" height="70.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="140" y="165" width="320" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="300.0" y="185" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RegistrarVentaCasoUso</text>
+<line x1="140" y1="205.0" x2="460" y2="205.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="150" y="225.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s)</text>
+<rect x="140" y="300" width="320" height="86.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="140" y="300" width="320" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="300.0" y="318" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="300.0" y="337" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">ProcesadorPagos</text>
+<line x1="140" y1="356.0" x2="460" y2="356.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="150" y="376.76800000000003" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ cobrar(monto, metodo, ref)</text>
+<rect x="50" y="470" width="230" height="69.03999999999999" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="50" y="470" width="230" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="165.0" y="490" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ProcesadorPagosSimulado</text>
+<line x1="50" y1="510.0" x2="280" y2="510.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="60" y="529.632" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">pruebas</text>
+<rect x="300" y="470" width="230" height="85.03999999999999" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="300" y="470" width="230" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="415.0" y="488" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«previsto»</text>
+<text x="415.0" y="507" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">AdaptadorNiubiz</text>
+<line x1="300" y1="526.0" x2="530" y2="526.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="310" y="545.632" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">API REST del proveedor</text>
+<path d="M300,235.46 L300,300" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M165,470 L165,440 L260,440 L260,386.46000000000004" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<path d="M415,470 L415,440 L340,440 L340,386.46000000000004" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<text x="50" y="640" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Problema: cada pasarela tiene su propia API.</text>
+<text x="50" y="666" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Solución: el caso de uso dice cobrar(); el adaptador</text>
+<text x="50" y="690" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">lo traduce al lenguaje del proveedor.</text>
+<text x="50" y="720" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">También: ServicioBloqueosRedis, Notificador.</text>
+<rect x="720" y="165" width="320" height="70.46000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="720" y="165" width="320" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="880.0" y="185" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">ConfirmarCitaCasoUso</text>
+<line x1="720" y1="205.0" x2="1040" y2="205.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="730" y="225.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ ejecutar(s)</text>
+<rect x="680" y="300" width="400" height="104.92" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="680" y="300" width="400" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="880.0" y="318" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«interface»</text>
+<text x="880.0" y="337" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="italic" fill="#1B2533" text-anchor="middle">RepositorioCitas</text>
+<line x1="680" y1="356.0" x2="1080" y2="356.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="690" y="376.76800000000003" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ guardar(cita)</text>
+<text x="690" y="395.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ buscarSolapadas(recurso, rango)</text>
+<rect x="630" y="495" width="240" height="69.03999999999999" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="630" y="495" width="240" height="32" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="750.0" y="515" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RepositorioCitasMemoria</text>
+<line x1="630" y1="535.0" x2="870" y2="535.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="640" y="554.632" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">Map (pruebas)</text>
+<rect x="890" y="495" width="240" height="85.03999999999999" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="890" y="495" width="240" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1010.0" y="513" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«siguiente sprint»</text>
+<text x="1010.0" y="532" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RepositorioCitasPostgres</text>
+<line x1="890" y1="551.0" x2="1130" y2="551.0" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="900" y="570.632" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">SQL + EXCLUDE</text>
+<path d="M880,235.46 L880,300" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ao)"/>
+<path d="M750,495 L750,465 L840,465 L840,404.92" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<path d="M1010,495 L1010,465 L920,465 L920,404.92" fill="none" stroke="#4D4D4D" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#at)"/>
+<text x="630" y="660" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Problema: el negocio no debe conocer SQL.</text>
+<text x="630" y="686" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Solución: el caso de uso pide guardar(cita);</text>
+<text x="630" y="710" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">el repositorio escribe el SQL.</text>
+<rect x="1290" y="165" width="340" height="127.38000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1290" y="165" width="340" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1460.0" y="183" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«entity»</text>
+<text x="1460.0" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">Cita</text>
+<line x1="1290" y1="243.46" x2="1630" y2="243.46" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1300" y="233.768" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- constructor privado</text>
+<text x="1300" y="264.228" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ crear(datos): Cita {static}</text>
+<text x="1300" y="282.688" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ confirmar() · cancelar()</text>
+<rect x="1290" y="400" width="340" height="127.38000000000001" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<rect x="1290" y="400" width="340" height="48" fill="#FFFFFF" stroke="#3E4A5C" stroke-width="1.5"/>
+<text x="1460.0" y="418" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#5A6475" text-anchor="middle">«value object»</text>
+<text x="1460.0" y="437" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" font-style="normal" fill="#1B2533" text-anchor="middle">RangoHorario</text>
+<line x1="1290" y1="478.46" x2="1630" y2="478.46" stroke="#3E4A5C" stroke-width="1.2"/>
+<text x="1300" y="468.76800000000003" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">- constructor privado</text>
+<text x="1300" y="499.22799999999995" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ crear(inicio, fin) {static}</text>
+<text x="1300" y="517.688" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#222" text-anchor="start">+ desdeDuracion(i, min) {static}</text>
+<text x="1210" y="640" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">Problema: crear una cita inválida (sin sede,</text>
+<text x="1210" y="664" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#222" text-anchor="start">sin cliente o con rango invertido).</text>
+<text x="1210" y="690" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">Solución: el constructor es privado; solo se crea</text>
+<text x="1210" y="714" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">por crear(), que valida las reglas y fija el</text>
+<text x="1210" y="738" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start">estado inicial &quot;pendiente&quot;.</text>
+</svg>
