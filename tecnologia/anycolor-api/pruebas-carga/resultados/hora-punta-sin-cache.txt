@@ -1,0 +1,27 @@
+ Container anycolor-api-k6-run-6d77c80bc0a1 Creating 
+ Container anycolor-api-k6-run-6d77c80bc0a1 Created 
+
+     ✓ catálogo 200
+     ✓ estilistas 200
+     ✓ disponibilidad 200
+
+     checks.........................: 100.00% 62565 out of 62565
+     data_received..................: 74 MB   861 kB/s
+     data_sent......................: 9.8 MB  114 kB/s
+     http_req_blocked...............: avg=12.37µs  med=7.45µs  p(90)=11.19µs  p(95)=12.92µs  max=17.74ms 
+     http_req_connecting............: avg=2.97µs   med=0s      p(90)=0s       p(95)=0s       max=17.67ms 
+     http_req_duration..............: avg=16.38ms  med=5.49ms  p(90)=33.57ms  p(95)=64.93ms  max=739.55ms
+       { expected_response:true }...: avg=16.38ms  med=5.49ms  p(90)=33.57ms  p(95)=64.93ms  max=739.55ms
+     ✓ { tipo:catalogo }............: avg=10.97ms  med=3.64ms  p(90)=21.26ms  p(95)=46.24ms  max=649ms   
+     ✓ { tipo:disponibilidad }......: avg=27.2ms   med=12.4ms  p(90)=57.33ms  p(95)=107.89ms max=739.55ms
+   ✓ http_req_failed................: 0.00%   0 out of 62565
+     http_req_receiving.............: avg=138.86µs med=126.5µs p(90)=187.43µs p(95)=211.63µs max=21.1ms  
+     http_req_sending...............: avg=36.32µs  med=23.36µs p(90)=63.5µs   p(95)=73.31µs  max=53.93ms 
+     http_req_tls_handshaking.......: avg=0s       med=0s      p(90)=0s       p(95)=0s       max=0s      
+     http_req_waiting...............: avg=16.21ms  med=5.32ms  p(90)=33.39ms  p(95)=64.49ms  max=738.37ms
+     http_reqs......................: 62565   730.157131/s
+     iteration_duration.............: avg=1.05s    med=1.02s   p(90)=1.11s    p(95)=1.2s     max=1.88s   
+     iterations.....................: 20855   243.38571/s
+     vus............................: 23      min=18             max=300
+     vus_max........................: 300     min=300            max=300
+

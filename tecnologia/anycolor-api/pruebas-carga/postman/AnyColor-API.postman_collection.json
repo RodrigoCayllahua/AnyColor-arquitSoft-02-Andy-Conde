@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "AnyColor Salón · API (sprint 2)",
+    "description": "Pruebas de funcionamiento y seguridad (EQ-04) y tiempos de respuesta (EQ-01). Importar en Postman o ejecutar con Newman. Variable base: http://localhost:3001/api/v1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base", "value": "http://localhost:3001/api/v1" },
+    { "key": "corte", "value": "44444444-1111-4111-8111-000000000001" },
+    { "key": "carla", "value": "33333333-1111-4111-8111-000000000004" }
+  ],
+  "item": [
+    {
+      "name": "01 Catálogo de servicios (público, rápido)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "pm.test('Responde en menos de 500 ms (el p95 < 200 ms se mide con k6)', () => pm.expect(pm.response.responseTime).to.be.below(500));",
+        "pm.test('Trae los 4 servicios', () => pm.expect(pm.response.json()).to.have.lengthOf(4));"
+      ] } }],
+      "request": { "method": "GET", "url": "{{base}}/catalogo/servicios" }
+    },
+    {
+      "name": "02 Disponibilidad de un día",
+      "event": [
+        { "listen": "prerequest", "script": { "exec": [
+          "const d = new Date(Date.now() + 7*86400000).toISOString().slice(0,10);",
+          "pm.collectionVariables.set('fecha', d);"
+        ] } },
+        { "listen": "test", "script": { "exec": [
+          "pm.test('200 OK', () => pm.response.to.have.status(200));",
+          "pm.test('Devuelve turnos con estado', () => pm.expect(pm.response.json().turnos[0]).to.have.property('estado'));",
+          "pm.test('Responde en menos de 500 ms (el p95 < 200 ms se mide con k6)', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+        ] } }
+      ],
+      "request": { "method": "GET", "url": "{{base}}/citas/disponibilidad?servicioId={{corte}}&estilistaId={{carla}}&fecha={{fecha}}" }
+    },
+    {
+      "name": "03 Login de clienta (guarda el token)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "const j = pm.response.json();",
+        "pm.test('Entrega un token JWT', () => pm.expect(j.token.split('.')).to.have.lengthOf(3));",
+        "pm.test('EQ-04: no expone la clave ni su hash', () => pm.expect(pm.response.text()).to.not.include('hash_clave').and.not.include('AnyColor2026'));",
+        "pm.collectionVariables.set('tokenCliente', j.token);"
+      ] } }],
+      "request": { "method": "POST", "url": "{{base}}/auth/login", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"email\": \"ana@correo.com\", \"clave\": \"AnyColor2026\" }" } }
+    },
+    {
+      "name": "04 EQ-04 · Clave incorrecta → 401",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('401 Unauthorized', () => pm.response.to.have.status(401));",
+        "pm.test('Mensaje genérico (no revela si el correo existe)', () => pm.expect(pm.response.json().message).to.eql('Correo o clave incorrectos'));"
+      ] } }],
+      "request": { "method": "POST", "url": "{{base}}/auth/login", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"email\": \"ana@correo.com\", \"clave\": \"incorrecta\" }" } }
+    },
+    {
+      "name": "05 EQ-04 · Sin token → 401",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('401 Unauthorized', () => pm.response.to.have.status(401));"
+      ] } }],
+      "request": { "method": "GET", "url": "{{base}}/citas/mias" }
+    },
+    {
+      "name": "06 EQ-04 · Token falsificado → 401",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('401 Unauthorized', () => pm.response.to.have.status(401));"
+      ] } }],
+      "request": { "method": "GET", "url": "{{base}}/citas/mias", "header": [{ "key": "Authorization", "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4Iiwicm9sIjoiU1VQRVJfQURNSU4ifQ.firmafalsa" }] }
+    },
+    {
+      "name": "07 EQ-04 · Clienta pide la agenda del personal → 403",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('403 Forbidden', () => pm.response.to.have.status(403));"
+      ] } }],
+      "request": { "method": "GET", "url": "{{base}}/citas/agenda?fecha={{fecha}}", "header": [{ "key": "Authorization", "value": "Bearer {{tokenCliente}}" }] }
+    },
+    {
+      "name": "08 Datos inválidos → 400",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('400 Bad Request', () => pm.response.to.have.status(400));",
+        "pm.test('Explica qué está mal', () => pm.expect(pm.response.json().message.join(' ')).to.include('no es válido'));"
+      ] } }],
+      "request": { "method": "POST", "url": "{{base}}/citas/bloqueos", "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{tokenCliente}}" }],
+        "body": { "mode": "raw", "raw": "{ \"servicioId\": \"x\", \"estilistaId\": \"y\", \"inicio\": \"mañana\" }" } }
+    },
+    {
+      "name": "09 Login de administrador de sede",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "pm.test('Rol ADMIN_SEDE con su sede', () => { const u = pm.response.json().usuario; pm.expect(u.rol).to.eql('ADMIN_SEDE'); pm.expect(u.sedeId).to.be.a('string'); });",
+        "pm.collectionVariables.set('tokenAdmin', pm.response.json().token);"
+      ] } }],
+      "request": { "method": "POST", "url": "{{base}}/auth/login", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"email\": \"admin.centro@anycolor.pe\", \"clave\": \"AnyColor2026\" }" } }
+    },
+    {
+      "name": "10 EQ-04 · El admin ve solo la agenda de su sede",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('200 OK', () => pm.response.to.have.status(200));",
+        "pm.test('Todas las citas son de su sede', () => pm.response.json().forEach(c => pm.expect(c.sede).to.eql('AnyColor Centro')));"
+      ] } }],
+      "request": { "method": "GET", "url": "{{base}}/citas/agenda?fecha={{fecha}}", "header": [{ "key": "Authorization", "value": "Bearer {{tokenAdmin}}" }] }
+    }
+  ]
+}
