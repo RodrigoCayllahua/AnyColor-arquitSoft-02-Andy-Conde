@@ -1,16 +1,19 @@
 # Desarrollo (solo bases):          docker compose up -d
 # Sistema completo con 3 copias:    docker compose --profile completo up -d --build --scale api=3
 # Pruebas de carga (k6):            docker compose run --rm k6 run /scripts/rendimiento-catalogo.js
+#
+# SEGURIDAD: las claves NO se escriben aquí. Docker Compose las toma del archivo .env
+# (que nunca se sube a GitHub). Ver .env.example.
 services:
   postgres:
     image: postgres:16
     container_name: anycolor-postgres
     environment:
       POSTGRES_USER: anycolor
-      POSTGRES_PASSWORD: anycolor
+      POSTGRES_PASSWORD: ${DB_CLAVE:-anycolor}
       POSTGRES_DB: anycolor
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"   # solo accesible desde esta PC, no desde la red
     volumes:
       - datos-postgres:/var/lib/postgresql/data
 
@@ -18,7 +21,7 @@ services:
     image: redis:7
     container_name: anycolor-redis
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"   # solo accesible desde esta PC, no desde la red
 
   # API sin estado: se pueden levantar N copias (--scale api=3)
   api:
@@ -26,13 +29,16 @@ services:
     profiles: ["completo"]
     environment:
       PUERTO: "3001"
-      DATABASE_URL: postgres://anycolor:anycolor@postgres:5432/anycolor
+      DATABASE_URL: postgres://anycolor:${DB_CLAVE:-anycolor}@postgres:5432/anycolor
       REDIS_URL: redis://redis:6379
       BLOQUEOS: redis
       CACHE: ${CACHE:-redis}
-      JWT_SECRETO: cambia-esta-frase-por-una-larga-y-secreta
-      JWT_DURACION: 8h
-      URL_FRONTEND: http://localhost:3000,http://localhost:3002
+      JWT_SECRETO: ${JWT_SECRETO:?Falta JWT_SECRETO en el archivo .env}
+      JWT_DURACION: ${JWT_DURACION:-2h}
+      URL_FRONTEND: ${URL_FRONTEND:-http://localhost:3000}
+      CONFIAR_EN_PROXY: "si"          # la API está detrás de Nginx
+      SWAGGER: ${SWAGGER:-activado}   # en una producción real: desactivado
+      LIMITE_PETICIONES: ${LIMITE_PETICIONES:-activado}  # "desactivado" solo para pruebas de carga con k6
     depends_on: [postgres, redis]
 
   # Balanceador de carga: reparte las peticiones entre las copias de la API
