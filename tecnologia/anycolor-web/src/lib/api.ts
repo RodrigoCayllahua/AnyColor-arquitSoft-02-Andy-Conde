@@ -2,7 +2,7 @@
 // Cliente de la API REST: el ÚNICO lugar del frontend que sabe dónde está el backend.
 // Cada función hace una petición HTTP con JSON y devuelve los datos ya convertidos.
 // =============================================================
-import { obtenerSesion } from './sesion';
+import { cerrarSesion, obtenerSesion } from './sesion';
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/api/v1';
 
@@ -32,6 +32,8 @@ async function pedir<T>(metodo: string, ruta: string, cuerpo?: unknown): Promise
     body: cuerpo ? JSON.stringify(cuerpo) : undefined,
   });
   const datos = await respuesta.json().catch(() => null);
+  // Token vencido o inválido: se cierra la sesión para que vuelva a ingresar
+  if (respuesta.status === 401 && sesion) cerrarSesion();
   if (!respuesta.ok) {
     const mensaje = Array.isArray(datos?.message) ? datos.message.join('. ') : datos?.message;
     throw new ErrorApi(respuesta.status, mensaje ?? 'Error de conexión con el servidor');
@@ -48,19 +50,19 @@ export const api = {
 
   // Catálogo
   servicios: () => pedir<Servicio[]>('GET', '/catalogo/servicios'),
-  estilistas: (servicioId: string) => pedir<Estilista[]>('GET', `/catalogo/servicios/${servicioId}/estilistas`),
+  estilistas: (servicioId: string) => pedir<Estilista[]>('GET', `/catalogo/servicios/${encodeURIComponent(servicioId)}/estilistas`),
 
   // Citas
   disponibilidad: (servicioId: string, estilistaId: string, fecha: string) =>
-    pedir<{ turnos: Turno[] }>('GET', `/citas/disponibilidad?servicioId=${servicioId}&estilistaId=${estilistaId}&fecha=${fecha}`),
+    pedir<{ turnos: Turno[] }>('GET', `/citas/disponibilidad?${new URLSearchParams({ servicioId, estilistaId, fecha })}`),
   bloquear: (servicioId: string, estilistaId: string, inicio: string) =>
     pedir<{ inicio: string; fin: string; expiraEn: string }>('POST', '/citas/bloqueos', { servicioId, estilistaId, inicio }),
   confirmar: (servicioId: string, estilistaId: string, inicio: string) =>
     pedir<{ id: string; estado: string }>('POST', '/citas', { servicioId, estilistaId, inicio }),
   misCitas: () => pedir<CitaVista[]>('GET', '/citas/mias'),
-  agenda: (fecha: string) => pedir<CitaVista[]>('GET', `/citas/agenda?fecha=${fecha}`),
+  agenda: (fecha: string) => pedir<CitaVista[]>('GET', `/citas/agenda?${new URLSearchParams({ fecha })}`),
   cambiarEstado: (id: string, accion: 'iniciar' | 'finalizar' | 'cancelar') =>
-    pedir<{ id: string; estado: string }>('PATCH', `/citas/${id}/estado`, { accion }),
+    pedir<{ id: string; estado: string }>('PATCH', `/citas/${encodeURIComponent(id)}/estado`, { accion }),
 };
 
 /** Utilidades de formato para Perú */
