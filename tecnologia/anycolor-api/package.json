@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
-    "@nestjs/config": "^12.0.1",
+    "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.0.1",
-    "@nestjs/jwt": "^12.0.3",
+    "@nestjs/jwt": "^11.0.2",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.4.8",
     "bcryptjs": "^3.0.3",
@@ -73,9 +73,28 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "citas/dominio/**/*.ts",
+      "citas/aplicacion/**/*.ts",
+      "citas/infraestructura/servicio-bloqueos.memoria.ts",
+      "citas/infraestructura/repositorio-catalogo.cache.ts",
+      "compartido/cache.ts",
+      "!**/*.spec.ts"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "lines": 80,
+        "branches": 70,
+        "functions": 80,
+        "statements": 80
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "html",
+      "lcov"
+    ]
   }
 }

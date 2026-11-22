@@ -20,20 +20,20 @@ import {
 export class AuthController {
   constructor(private readonly auth: AuthService) {}
 
-  /** POST /api/v1/auth/login  { email, clave } → { token, usuario } */
+  /** Iniciar sesión: devuelve el token JWT y los datos del usuario */
   @Post('login')
   @HttpCode(200)
   login(@Body() dto: LoginDto) {
     return this.auth.login(dto);
   }
 
-  /** POST /api/v1/auth/registro  { nombre, email, clave, telefono } → crea una clienta */
+  /** Registrar una cuenta de clienta */
   @Post('registro')
   registro(@Body() dto: RegistroDto) {
     return this.auth.registrarCliente(dto);
   }
 
-  /** GET /api/v1/auth/yo → datos del usuario del token */
+  /** Datos del usuario que inició sesión */
   @ApiBearerAuth()
   @Get('yo')
   @UseGuards(AutorizacionGuard)

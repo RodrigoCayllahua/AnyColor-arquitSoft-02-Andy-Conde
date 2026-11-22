@@ -47,13 +47,13 @@ export class CitasController {
     @Inject(REPOSITORIO_CITAS) private readonly citas: RepositorioCitas,
   ) {}
 
-  /** GET /api/v1/citas/disponibilidad?servicioId=&estilistaId=&fecha=2026-11-10 (público) */
+  /** Turnos de un día: libre, ocupado, en_proceso o pasado */
   @Get('disponibilidad')
   verDisponibilidad(@Query() q: DisponibilidadQuery) {
     return this.disponibilidad.ejecutar(q.servicioId, q.estilistaId, q.fecha);
   }
 
-  /** POST /api/v1/citas/bloqueos → reserva el horario 5 minutos */
+  /** Bloquear un horario 5 minutos (409 si otra persona lo tiene) */
   @Post('bloqueos')
   @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
@@ -65,7 +65,7 @@ export class CitasController {
     });
   }
 
-  /** POST /api/v1/citas → confirma la cita (debe existir el bloqueo) */
+  /** Confirmar la cita (exige el bloqueo vigente; guardia final EXCLUDE) */
   @Post()
   @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
@@ -77,7 +77,7 @@ export class CitasController {
     });
   }
 
-  /** GET /api/v1/citas/mias → citas de la clienta que inició sesión */
+  /** Citas de la clienta que inició sesión */
   @Get('mias')
   @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
@@ -85,7 +85,7 @@ export class CitasController {
     return this.citas.listarDeCliente(u.sub);
   }
 
-  /** GET /api/v1/citas/agenda?fecha=2026-11-10 → panel del personal */
+  /** Agenda del día para el panel del personal (filtrada por sede y rol) */
   @Get('agenda')
   @UseGuards(AutorizacionGuard)
   @Roles('ESTILISTA', 'CAJERO', 'ADMIN_SEDE', 'SUPER_ADMIN')
@@ -100,7 +100,7 @@ export class CitasController {
     });
   }
 
-  /** PATCH /api/v1/citas/:id/estado  { accion: "iniciar" | "finalizar" | "cancelar" } */
+  /** Iniciar, finalizar o cancelar una cita */
   @Patch(':id/estado')
   @UseGuards(AutorizacionGuard)
   cambiarEstadoCita(

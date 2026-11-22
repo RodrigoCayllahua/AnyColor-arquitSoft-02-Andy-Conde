@@ -4,9 +4,11 @@
 // =============================================================
 import { Logger, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import Redis from 'ioredis';
+import type Redis from 'ioredis';
 import type { Pool } from 'pg';
 import { POOL } from '../compartido/base-datos.module';
+import { CACHE, type Cache } from '../compartido/cache';
+import { REDIS } from '../compartido/redis.module';
 import { BloquearHorarioCasoUso } from './aplicacion/bloquear-horario.caso-uso';
 import { CambiarEstadoCitaCasoUso } from './aplicacion/cambiar-estado-cita.caso-uso';
 import { ConfirmarCitaCasoUso } from './aplicacion/confirmar-cita.caso-uso';
@@ -24,6 +26,7 @@ import type {
   ServicioBloqueos,
 } from './dominio/contratos';
 import { NotificadorConsola } from './infraestructura/notificador.consola';
+import { RepositorioCatalogoEnCache } from './infraestructura/repositorio-catalogo.cache';
 import { RepositorioCatalogoPostgres } from './infraestructura/repositorio-catalogo.postgres';
 import { RepositorioCitasPostgres } from './infraestructura/repositorio-citas.postgres';
 import { ServicioBloqueosMemoria } from './infraestructura/servicio-bloqueos.memoria';
@@ -41,22 +44,28 @@ import { CitasController } from './presentacion/citas.controller';
     },
     {
       provide: REPOSITORIO_CATALOGO,
-      inject: [POOL],
-      useFactory: (pool: Pool) => new RepositorioCatalogoPostgres(pool),
+      inject: [POOL, CACHE],
+      // Decorator: el repositorio PostgreSQL envuelto con caché (Redis o memoria)
+      useFactory: (pool: Pool, cache: Cache) =>
+        new RepositorioCatalogoEnCache(
+          new RepositorioCatalogoPostgres(pool),
+          cache,
+        ),
     },
     {
       provide: SERVICIO_BLOQUEOS,
-      inject: [ConfigService],
-      useFactory: (config: ConfigService): ServicioBloqueos => {
-        if (config.get('BLOQUEOS') === 'memoria') {
+      inject: [ConfigService, REDIS],
+      useFactory: (
+        config: ConfigService,
+        redis: Redis | null,
+      ): ServicioBloqueos => {
+        if (config.get('BLOQUEOS') === 'memoria' || !redis) {
           new Logger('Citas').warn(
             'Bloqueos EN MEMORIA: solo para desarrollo con una instancia',
           );
           return new ServicioBloqueosMemoria();
         }
-        return new ServicioBloqueosRedis(
-          new Redis(config.getOrThrow<string>('REDIS_URL')),
-        );
+        return new ServicioBloqueosRedis(redis);
       },
     },
     { provide: NOTIFICADOR, useClass: NotificadorConsola },
