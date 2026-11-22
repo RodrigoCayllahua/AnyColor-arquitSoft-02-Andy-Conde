@@ -8,9 +8,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api/v1'); // todas las rutas empiezan con /api/v1
+  // Permite que la aplicación web llame a la API (se aceptan varias direcciones separadas por coma)
   app.enableCors({
-    origin: process.env.URL_FRONTEND ?? 'http://localhost:3000',
-  }); // permite que el frontend llame a la API
+    origin: (process.env.URL_FRONTEND ?? 'http://localhost:3000').split(','),
+  });
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,

@@ -32,7 +32,7 @@ services:
       CACHE: ${CACHE:-redis}
       JWT_SECRETO: cambia-esta-frase-por-una-larga-y-secreta
       JWT_DURACION: 8h
-      URL_FRONTEND: http://localhost:3000
+      URL_FRONTEND: http://localhost:3000,http://localhost:3002
     depends_on: [postgres, redis]
 
   # Balanceador de carga: reparte las peticiones entre las copias de la API
