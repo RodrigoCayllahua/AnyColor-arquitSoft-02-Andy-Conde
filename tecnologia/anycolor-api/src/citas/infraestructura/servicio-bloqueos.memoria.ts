@@ -36,6 +36,10 @@ export class ServicioBloqueosMemoria implements ServicioBloqueos {
     return this.vigente(clave)?.titular ?? null;
   }
 
+  async titulares(claves: string[]): Promise<(string | null)[]> {
+    return claves.map((c) => this.vigente(c)?.titular ?? null);
+  }
+
   async liberar(clave: string, titular: string): Promise<void> {
     if (this.vigente(clave)?.titular === titular) this.bloqueos.delete(clave);
   }

@@ -40,7 +40,9 @@ export class ConsultarDisponibilidadCasoUso {
       dia,
     );
 
+    // 1) Turnos del día y su estado según las citas ya guardadas
     const turnos: { inicio: string; fin: string; estado: EstadoTurno }[] = [];
+    const porRevisar: { indice: number; claves: [string, string] }[] = [];
     for (
       let t = dia.inicio.getTime();
       t < dia.fin.getTime();
@@ -56,15 +58,14 @@ export class ConsultarDisponibilidadCasoUso {
       if (rango.inicio.getTime() < Date.now()) estado = 'pasado';
       else if (citasDelDia.some((c) => c.rango.solapaCon(rango)))
         estado = 'ocupado';
-      else if (
-        (await this.bloqueos.titularDe(
-          claveBloqueo('estilista', estilista.id, rango.inicio, rango.fin),
-        )) ||
-        (await this.bloqueos.titularDe(
-          claveBloqueo('sillon', estilista.sillonId, rango.inicio, rango.fin),
-        ))
-      )
-        estado = 'en_proceso';
+      else
+        porRevisar.push({
+          indice: turnos.length,
+          claves: [
+            claveBloqueo('estilista', estilista.id, rango.inicio, rango.fin),
+            claveBloqueo('sillon', estilista.sillonId, rango.inicio, rango.fin),
+          ],
+        });
 
       turnos.push({
         inicio: rango.inicio.toISOString(),
@@ -72,6 +73,16 @@ export class ConsultarDisponibilidadCasoUso {
         estado,
       });
     }
+
+    // 2) Bloqueos de 5 min de todos los turnos libres en UNA sola consulta (MGET)
+    const titulares = await this.bloqueos.titulares(
+      porRevisar.flatMap((p) => p.claves),
+    );
+    porRevisar.forEach((p, i) => {
+      if (titulares[2 * i] || titulares[2 * i + 1])
+        turnos[p.indice].estado = 'en_proceso';
+    });
+
     return {
       servicio: servicio.nombre,
       estilista: estilista.nombre,

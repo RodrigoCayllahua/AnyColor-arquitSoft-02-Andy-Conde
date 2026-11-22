@@ -24,6 +24,11 @@ export class ServicioBloqueosRedis implements ServicioBloqueos {
     return this.redis.get(clave);
   }
 
+  /** MGET: una sola ida y vuelta a Redis para todas las claves (táctica de rendimiento). */
+  async titulares(claves: string[]): Promise<(string | null)[]> {
+    return claves.length ? this.redis.mget(...claves) : [];
+  }
+
   async liberar(clave: string, titular: string): Promise<void> {
     await this.redis.eval(SCRIPT_LIBERAR, 1, clave, titular);
   }

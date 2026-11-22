@@ -63,6 +63,8 @@ export interface ServicioBloqueos {
   /** true si se obtuvo el bloqueo; false si otra persona ya lo tiene vigente. */
   adquirir(clave: string, titular: string, ttlMs: number): Promise<boolean>;
   titularDe(clave: string): Promise<string | null>;
+  /** Titulares de varias claves en una sola consulta (null si la clave está libre). */
+  titulares(claves: string[]): Promise<(string | null)[]>;
   liberar(clave: string, titular: string): Promise<void>;
 }
 

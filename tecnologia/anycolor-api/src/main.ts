@@ -38,6 +38,10 @@ async function bootstrap() {
 
   const puerto = Number(process.env.PUERTO ?? 3001);
   await app.listen(puerto);
+  // Mantener vivas las conexiones más tiempo que el balanceador (evita errores 502)
+  const servidor = app.getHttpServer() as import('node:http').Server;
+  servidor.keepAliveTimeout = 65_000;
+  servidor.headersTimeout = 66_000;
   console.log(`API AnyColor escuchando en http://localhost:${puerto}/api/v1`);
 }
 void bootstrap();
