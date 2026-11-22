@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Colores de AnyColor Salón */
+@theme {
+  --color-marca: #1f3b66;
+  --color-acento: #b8336a;
+  --color-suave: #f3f5f9;
+}
+
+body {
+  background: #ffffff;
+  color: #222b38;
+  font-family: "Segoe UI", Calibri, Arial, sans-serif;
+}
