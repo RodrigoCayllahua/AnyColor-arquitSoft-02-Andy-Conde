@@ -27,7 +27,7 @@ AnyColor Salón es un sistema web para cadenas de salones de belleza con varias 
 | Las decisiones (ADR) | [07 · Decisiones arquitectónicas](docs/01-analisis-de-sistema/07-decisiones-arquitectonicas.md) |
 | Los módulos del sistema | [Componentes arquitectónicos](docs/02-arquitectura-software/componentes-arquitectonicos.md) · [C4 nivel 3](docs/04-modelo-c4/Nivel3-Diagrama-de-Componentes.md) |
 | Cómo se manejan las citas sin cruces | [Diseño interno del módulo Citas](docs/03-diseño-de-software/diseño-interno/diseño-interno-de-modulos.md) · [C4 nivel 4](docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md) |
-| El estilo arquitectónico | [Estilo: monolito modular + SPA](docs/02-arquitectura-software/estilo-arquitectonico.md) |
+| El estilo arquitectónico | [Estilo: monolito modular + aplicación web](docs/02-arquitectura-software/estilo-arquitectonico.md) |
 | El enfoque arquitectónico | [Enfoque: Clean Architecture](docs/02-arquitectura-software/enfoque-arquitectonico.md) |
 | Los patrones y principios SOLID | [Patrones](docs/03-diseño-de-software/diseño-interno/patrones-de-diseño.md) · [SOLID](docs/03-diseño-de-software/diseño-interno/principios-de-diseño.md) |
 | El modelo C4 | [Nivel 1](docs/04-modelo-c4/Nivel1-DiagramadeContextodelSistema.md) · [Nivel 2](docs/04-modelo-c4/Nivel2-DiagramadeContenedores.md) · [Nivel 3](docs/04-modelo-c4/Nivel3-Diagrama-de-Componentes.md) · [Nivel 4](docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md) |
@@ -43,7 +43,7 @@ AnyColor Salón es un sistema web para cadenas de salones de belleza con varias 
 
 | Decisión | Qué elegimos | Por qué |
 |---|---|---|
-| Estilo | Monolito modular + SPA | Venta, inventario y comisión se guardan en una sola transacción; equipo pequeño |
+| Estilo | Monolito modular + aplicación web | Venta, inventario y comisión se guardan en una sola transacción; equipo pequeño |
 | Enfoque | Clean Architecture en cada módulo | Las reglas del salón no dependen de la base de datos ni de los proveedores |
 | Comunicación | API REST con JSON sobre HTTPS | El frontend y el backend se despliegan por separado |
 | Datos | PostgreSQL (fuente de verdad) + Redis (bloqueo de 5 min y caché) | Cero citas cruzadas aunque reserven muchas clientas a la vez |

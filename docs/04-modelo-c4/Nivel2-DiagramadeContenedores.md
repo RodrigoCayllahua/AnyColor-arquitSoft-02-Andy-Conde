@@ -31,7 +31,7 @@ Abrir la caja «AnyColor Salón» del nivel 1 y mostrar los **contenedores** que
 
 | Contenedor | Tecnología | Responsabilidad | Datos que maneja |
 |---|---|---|---|
-| **Aplicación web** | SPA · Next.js / React | Reserva para clientes, POS para cajeros y paneles de estilistas y administradores. Se ejecuta en el navegador y se publica en CDN | Ninguno persistente; solo el estado de la pantalla |
+| **Aplicación web** | Next.js / React | Reserva para clientes, POS para cajeros y paneles de estilistas y administradores. Se ejecuta en el navegador y se publica en CDN | Ninguno persistente; solo el estado de la pantalla |
 | **API AnyColor** | Node.js + NestJS | Expone la API REST, aplica las reglas del salón e integra los sistemas externos. Es un **monolito modular** sin estado: N instancias detrás de un balanceador | Ninguno propio; usa la base de datos y Redis |
 | **Base de datos** | PostgreSQL 16 | Fuente de verdad transaccional (ACID) con restricción anti-solape | Sedes, usuarios, servicios, citas, ventas, caja, inventario, comisiones, auditoría |
 | **Caché y bloqueos** | Redis 7 | Bloqueos temporales de 5 minutos, caché del catálogo y cola de trabajos | Copias temporales; no es fuente de verdad |
@@ -63,7 +63,7 @@ Abrir la caja «AnyColor Salón» del nivel 1 y mostrar los **contenedores** que
 |---|---|---|---|
 | Un único contenedor de backend (monolito modular) | Microservicios | Venta, inventario, caja y comisión necesitan transacción local; equipo pequeño | ADR-001 |
 | API sin estado replicada | Sesión en memoria del servidor | Permite agregar instancias en campañas (DA02) | ADR-001, ADR-005 |
-| Frontend separado (SPA + API REST) | Páginas generadas en el servidor | Frontend y backend evolucionan y se despliegan por separado | ADR-010 |
+| Frontend separado (aplicación web + API REST) | Páginas generadas en el servidor | Frontend y backend evolucionan y se despliegan por separado | ADR-010 |
 | PostgreSQL como fuente de verdad | Base de datos NoSQL | Citas, ventas, caja y stock necesitan transacciones y la restricción `EXCLUDE` | ADR-003 |
 | Redis para bloqueos y caché | Bloquear solo en la base de datos | `SET NX PX` es atómico y rápido; reduce la contención en PostgreSQL | ADR-004 |
 | Workers separados | Enviar mensajes dentro de la petición | Los recordatorios no deben frenar la caja ni la reserva | ADR-007 |

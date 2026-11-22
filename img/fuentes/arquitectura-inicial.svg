@@ -41,7 +41,7 @@
 <text x="1125.0" y="216.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
 <rect x="300" y="315" width="330" height="80" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
 <text x="465.0" y="353.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Aplicación web responsive</text>
-<text x="465.0" y="369.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[SPA]</text>
+<text x="465.0" y="369.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Next.js / React]</text>
 <rect x="720" y="315" width="330" height="80" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
 <text x="885.0" y="353.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">API REST / JSON</text>
 <text x="885.0" y="369.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[HTTPS + JWT]</text>

@@ -6,7 +6,7 @@
 <marker id="ad" viewBox="0 0 18 12" refX="1" refY="6" markerWidth="16" markerHeight="11" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#3E4A5C"/></marker>
 </defs>
 <rect width="100%" height="100%" fill="#FFFFFF"/>
-<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Estilo arquitectónico · Monolito modular + SPA</text>
+<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" font-style="normal" fill="#1A1A1A" text-anchor="start">Estilo arquitectónico · Monolito modular + aplicación web</text>
 <text x="28" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" font-style="normal" fill="#6A6A6A" text-anchor="start">Un solo backend desplegable, dividido en módulos con fronteras claras; API sin estado replicada detrás de un balanceador (ADR-001, ADR-010)</text>
 <text x="1732" y="40" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#8A8A8A" text-anchor="end">v3</text>
 <circle cx="425.0" cy="112" r="24" fill="#1F3B66" stroke="#152A4A" stroke-width="1.4"/>
@@ -29,7 +29,7 @@
 <text x="750.0" y="270.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">CDN + WAF</text>
 <text x="750.0" y="286.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#EFEFEF" text-anchor="middle">[Cloudflare]</text>
 <rect x="560" y="340" width="380" height="74" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
-<text x="750.0" y="375.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Aplicación web SPA</text>
+<text x="750.0" y="375.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Aplicación web</text>
 <text x="750.0" y="391.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Next.js / React · responsive]</text>
 <rect x="560" y="450" width="380" height="60" rx="8" fill="#F4F7FB" stroke="#7F8FA6" stroke-width="1.4"/>
 <text x="750.0" y="478.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1E2B3C" text-anchor="middle">Balanceador de carga</text>

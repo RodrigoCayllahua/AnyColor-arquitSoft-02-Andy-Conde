@@ -1,6 +1,6 @@
 # Estilo arquitectónico seleccionado
 
-**Estilo:** monolito modular (backend) con organización interna en capas, más un frontend SPA desacoplado por API REST. Decisión registrada en ADR-001 y ADR-010 ([07-decisiones-arquitectonicas.md](../01-analisis-de-sistema/07-decisiones-arquitectonicas.md)).
+**Estilo:** monolito modular (backend) con organización interna en capas, más una aplicación web (frontend) separada que se comunica por API REST. Decisión registrada en ADR-001 y ADR-010 ([07-decisiones-arquitectonicas.md](../01-analisis-de-sistema/07-decisiones-arquitectonicas.md)).
 
 ## Justificación
 
@@ -14,7 +14,7 @@
 
 ## Diagrama del estilo
 
-![Estilo monolito modular + SPA](../../img/estilo-monolito-modular.png)
+![Estilo monolito modular + aplicación web](../../img/estilo-monolito-modular.png)
 
 > Archivo editable: [`img/fuentes/estilo-monolito-modular.drawio`](../../img/fuentes/estilo-monolito-modular.drawio)
 
@@ -24,7 +24,7 @@
 | --- | --- |
 | Microservicios | Venta, inventario, caja y comisión necesitan una transacción local; separarlos obliga a consistencia eventual, más despliegues y más latencia. Costo injustificado para un equipo de una persona. |
 | Monolito sin módulos | Es más rápido al inicio, pero mezcla responsabilidades y rompe la mantenibilidad (DA06). |
-| Páginas generadas en el servidor | Acopla interfaz y backend; la SPA permite desplegar el frontend en CDN y evolucionarlo por separado (ADR-010). |
+| Páginas generadas en el servidor | Acopla interfaz y backend; una aplicación web separada permite desplegar el frontend en CDN y evolucionarlo por separado (ADR-010). |
 
 ## Límites del estilo
 

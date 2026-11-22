@@ -8,7 +8,7 @@ Cada componente responde a una necesidad concreta del análisis. La columna **Sa
 
 | Componente | Tipo | Responsabilidad | Sale de |
 |---|---|---|---|
-| Aplicación web | Contenedor · SPA Next.js/React | Pantallas de reserva para clientes, POS para cajeros y paneles para estilistas y administradores | HU01, HU03, HU07 · RC01, RC05 · ADR-010 |
+| Aplicación web | Contenedor · Next.js / React | Pantallas de reserva para clientes, POS para cajeros y paneles para estilistas y administradores | HU01, HU03, HU07 · RC01, RC05 · ADR-010 |
 | API REST + transversales | Componente del backend | Rutas `/api/v1`, autenticación JWT, RBAC por sede, validación, idempotencia y auditoría | RF02, RF23 · AC04, AC06 · DA04 · ADR-005, ADR-008 |
 
 ## Módulos de negocio (monolito modular)

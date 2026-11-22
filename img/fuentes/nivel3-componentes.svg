@@ -31,7 +31,7 @@
 <text x="1240.0" y="180.47500000000002" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#C9D6EA" text-anchor="middle">[Persona]</text>
 <rect x="630" y="250" width="360" height="80" rx="8" fill="#4A72B8" stroke="#36599A" stroke-width="1.4"/>
 <text x="810.0" y="288.25" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle">Aplicación web</text>
-<text x="810.0" y="304.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: SPA Next.js]</text>
+<text x="810.0" y="304.25" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#DCE6F6" text-anchor="middle">[Contenedor: Next.js / React]</text>
 <path d="M380,200 L380,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
 <path d="M595,200 L595,225 L810,225 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4"/>
 <path d="M810,200 L810,250" fill="none" stroke="#4D4D4D" stroke-width="1.4" marker-end="url(#ah)"/>

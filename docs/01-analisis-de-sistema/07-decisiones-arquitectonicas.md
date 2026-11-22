@@ -13,7 +13,7 @@
 | ADR-007 | Procesamiento asíncrono con colas (BullMQ) | DA07, DA05 | Recordatorios, tickets PDF y exportaciones no deben frenar la caja ni la reserva. | Workers separados de la API. |
 | ADR-008 | Idempotencia en operaciones críticas | DA03 | Los reintentos de red no deben duplicar cobros ni descuentos de stock. | Cabecera `Idempotency-Key` + tabla de claves. |
 | ADR-009 | Analítica desacoplada (réplica de lectura → Data Mart) | DA08 | Los reportes pesados no deben competir con la operación. | Etapa 3: réplica; Etapa 4: modelo dimensional. |
-| ADR-010 | Frontend SPA con Next.js/React consumiendo API REST | DA02, RC05 | Interfaz responsive, desplegable en CDN, separada del backend por contrato REST. | Aplicación web independiente. |
+| ADR-010 | Aplicación web (frontend) con Next.js/React consumiendo la API REST | DA02, RC05 | Interfaz responsive, desplegable en CDN, separada del backend por contrato REST. | Aplicación web independiente. |
 
 ---
 
