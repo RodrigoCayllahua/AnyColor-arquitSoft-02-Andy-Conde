@@ -8,6 +8,8 @@ Requisitos: Docker Desktop y Node.js 22.
 cd tecnologia/anycolor-api
 docker compose up -d          # PostgreSQL 16 + Redis 7
 copy .env.example .env        # Linux/Mac: cp .env.example .env
+# Genera tu propia clave JWT y pégala en JWT_SECRETO dentro de .env:
+node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
 npm install
 npm run db:iniciar            # crea las tablas y carga los datos de prueba
 npm run start:dev             # API en http://localhost:3001/api/v1
@@ -43,7 +45,7 @@ La cabecera `X-Atendido-Por` muestra qué réplica respondió.
 ```bash
 npm test                      # 19 pruebas unitarias
 npm run test:cov              # con reporte de cobertura (coverage/lcov-report/index.html)
-npm run test:e2e              # 6 pruebas contra PostgreSQL y Redis reales
+npm run test:e2e              # 12 pruebas contra PostgreSQL y Redis reales (incluye seguridad)
 npm run lint
 ```
 
@@ -58,6 +60,12 @@ docker run --rm --network anycolor-api_default -v "%cd%/pruebas-carga:/etc/newma
 
 ## k6 (con la opción B levantada)
 
+k6 envía miles de peticiones desde **una sola IP**, así que el límite de peticiones (rate limiting) las frenaría con 429. Solo para estas pruebas se desactiva y luego se vuelve a activar:
+
+```powershell
+$env:LIMITE_PETICIONES='desactivado'; docker compose --profile completo up -d --scale api=3
+```
+
 ```bash
 docker compose --profile pruebas run --rm k6 run /scripts/hora-punta.js            # EQ-01
 docker compose --profile pruebas run --rm k6 run /scripts/caida-replica.js         # EQ-02 (apagar una réplica mientras corre)
@@ -66,6 +74,12 @@ docker compose --profile pruebas run --rm k6 run /scripts/concurrencia-reservas.
 ```
 
 Las pruebas de concurrencia registran clientas de prueba; `npm run db:iniciar` deja la base como al inicio.
+
+Al terminar, vuelve a activar el límite:
+
+```powershell
+Remove-Item Env:LIMITE_PETICIONES; docker compose --profile completo up -d --scale api=3
+```
 
 ## Apagar
 

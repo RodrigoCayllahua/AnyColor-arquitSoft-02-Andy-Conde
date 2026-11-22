@@ -5,7 +5,7 @@
 | Tipo | Herramienta | Cantidad | Dónde | Qué comprueba |
 |---|---|---|---|---|
 | Unitarias | Jest | 19 | `src/**/*.spec.ts` | Reglas del dominio y casos de uso, sin base de datos |
-| Integración (e2e) | Jest + Supertest | 6 | `test/api.e2e-spec.ts` | La API completa contra PostgreSQL y Redis reales |
+| Integración (e2e) | Jest + Supertest | 12 | `test/api.e2e-spec.ts` | La API completa contra PostgreSQL y Redis reales |
 | Funcionales y seguridad | Postman / Newman | 10 peticiones, 20 verificaciones | `pruebas-carga/postman/` | Respuestas 200/400/401/403 y que no se filtren datos |
 | Carga y concurrencia | k6 | 4 escenarios | `pruebas-carga/*.js` | Tiempos, errores y cero cruces con cientos o miles de usuarios |
 | Núcleo del sprint 1 | Node test runner | 16 | `tecnologia/anycolor-core` | Modelo del dominio del primer sprint |
@@ -18,7 +18,7 @@
 | `src/citas/aplicacion/casos-uso.spec.ts` | Disponibilidad (libre, ocupado, en proceso), validaciones de la reserva, permisos para cambiar estado |
 | `src/compartido/cache.spec.ts` | *Cache-aside*, expiración, borrado por prefijo, caché desactivada, el Decorator consulta la base solo una vez |
 
-### Pruebas de integración (6)
+### Pruebas de integración (12)
 
 1. **EQ-04 seguridad:** sin token → 401, token falso → 401, clienta en la agenda → 403.
 2. **Validación:** datos inválidos → 400 con mensajes claros.
@@ -26,6 +26,12 @@
 4. **EQ-05 concurrencia:** 20 clientas bloquean el mismo horario a la vez → 1 recibe 201 y 19 reciben 409; la ganadora confirma y la perdedora no puede.
 5. **EQ-05 guardia final:** una inserción directa que se cruza es rechazada por PostgreSQL (23P01).
 6. Agenda del personal y cambio de estado de la cita.
+7. **OWASP cabeceras:** sin `X-Powered-By`; con `nosniff`, `X-Frame-Options`, HSTS y CSP.
+8. **OWASP CORS:** un sitio desconocido no recibe permiso; la aplicación web sí.
+9. **OWASP entradas y errores:** JSON roto → 400 sin detalles internos; cuerpo gigante → 413; inyección SQL en el correo → 400; HTML en el nombre → 400; intentar enviar `rol: SUPER_ADMIN` → 400; fecha imposible → 400.
+10. **JWT:** un token sin firma (`alg: none`) es rechazado con 401.
+11. **Fuerza bruta:** 5 claves incorrectas bloquean el login 15 minutos (429), aunque después se escriba la clave correcta.
+12. **Rate limiting:** al pasar el límite responde 429 con el encabezado `Retry-After`.
 
 ## Cobertura
 

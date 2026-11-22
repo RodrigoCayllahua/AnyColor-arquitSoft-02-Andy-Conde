@@ -37,7 +37,7 @@ npm run db:iniciar          # http://localhost:8080/api/v1
 ```bash
 npm test          # 19 pruebas unitarias
 npm run test:cov  # con cobertura (mínimo 80 %)
-npm run test:e2e  # 6 pruebas contra PostgreSQL y Redis reales
+npm run test:e2e  # 12 pruebas contra PostgreSQL y Redis reales (incluye seguridad)
 npm run lint      # estilo del código
 ```
 

@@ -35,11 +35,12 @@ AnyColor Salón es un sistema web para cadenas de salones de belleza con varias 
 | El modelo C4 | [Nivel 1](docs/04-modelo-c4/Nivel1-DiagramadeContextodelSistema.md) · [Nivel 2](docs/04-modelo-c4/Nivel2-DiagramadeContenedores.md) · [Nivel 3](docs/04-modelo-c4/Nivel3-Diagrama-de-Componentes.md) · [Nivel 4](docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md) |
 | **Sprint 2: resumen de la implementación** | [05 · Implementación](docs/05-implementacion-sprint2/README.md) |
 | Especificaciones SDD (criterios de aceptación y tareas) | [01 · Especificaciones SDD](docs/05-implementacion-sprint2/01-especificaciones-sdd.md) |
-| Los endpoints REST y Swagger | [02 · API REST y Swagger](docs/05-implementacion-sprint2/02-api-rest-swagger.md) · `http://localhost:3001/api/docs` |
+| Los endpoints REST y Swagger | [02 · API REST y Swagger](docs/05-implementacion-sprint2/02-api-rest-swagger.md) · al ejecutarlo en tu PC: `http://localhost:3001/api/docs` |
 | Base de datos y caché | [03 · Base de datos y caché](docs/05-implementacion-sprint2/03-base-de-datos-y-cache.md) |
 | Pruebas, cobertura y CI | [04 · Pruebas y cobertura](docs/05-implementacion-sprint2/04-pruebas-y-cobertura.md) · [ci.yml](.github/workflows/ci.yml) |
 | **Validación de atributos de calidad (k6, Postman)** | [05 · Validación](docs/05-implementacion-sprint2/05-validacion-atributos-calidad.md) · [resultados](tecnologia/anycolor-api/pruebas-carga/resultados/) |
 | Cómo ejecutar el sistema | [06 · Cómo ejecutar](docs/05-implementacion-sprint2/06-como-ejecutar.md) |
+| **La seguridad (OWASP, rate limiting, secretos)** | [07 · Auditoría de seguridad](docs/05-implementacion-sprint2/07-seguridad.md) |
 | El backend (API NestJS) | [tecnologia/anycolor-api](tecnologia/anycolor-api/) |
 | La aplicación web (Next.js) | [tecnologia/anycolor-web](tecnologia/anycolor-web/) |
 | El núcleo del sprint 1 | [tecnologia/anycolor-core](tecnologia/anycolor-core/) |
@@ -82,6 +83,10 @@ tecnologia/anycolor-core/         núcleo Clean Architecture del sprint 1 con pr
 propuesta/                        propuesta del proyecto v1, v2 y v3 + historial de versiones
 presentacion/                     diapositivas del primer y segundo sprint
 ```
+
+## Configuración y secretos
+
+Las claves (JWT, base de datos, y más adelante Mercado Pago o AWS) **nunca** se escriben en el código ni en este README. Cada proyecto trae un `.env.example` con nombres de variables y valores de ejemplo; se copia como `.env`, que está en `.gitignore` y no se sube a GitHub. Detalle en [07 · Auditoría de seguridad](docs/05-implementacion-sprint2/07-seguridad.md).
 
 ## Ejecutar las pruebas del núcleo
 
