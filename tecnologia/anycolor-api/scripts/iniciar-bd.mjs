@@ -3,7 +3,11 @@
 import { readFileSync } from 'node:fs';
 import pg from 'pg';
 
-process.loadEnvFile?.('.env');
+try {
+  process.loadEnvFile('.env');
+} catch {
+  // sin archivo .env: se usan las variables del entorno (Docker, CI)
+}
 const cliente = new pg.Client({ connectionString: process.env.DATABASE_URL });
 
 await cliente.connect();

@@ -1,0 +1,85 @@
+# Integración continua: en cada push o pull request se revisa el estilo,
+# se ejecutan las pruebas (unitarias con cobertura y de punta a punta)
+# y se compila el frontend. Si algo falla, el commit queda marcado en rojo.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  api:
+    name: Backend (NestJS) · lint, pruebas y cobertura
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tecnologia/anycolor-api
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: anycolor
+          POSTGRES_PASSWORD: anycolor
+          POSTGRES_DB: anycolor
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U anycolor"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7
+        ports: ['6379:6379']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tecnologia/anycolor-api/package-lock.json
+      - run: npm ci
+      - name: Lint
+        run: npx eslint "{src,test}/**/*.ts"
+      - name: Pruebas unitarias con cobertura
+        run: npm run test:cov
+      - name: Preparar base de datos
+        run: |
+          cp .env.example .env
+          npm run db:iniciar
+      - name: Pruebas de punta a punta (PostgreSQL + Redis)
+        run: npm run test:e2e
+      - name: Guardar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobertura-api
+          path: tecnologia/anycolor-api/coverage
+
+  web:
+    name: Frontend (Next.js) · lint y build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tecnologia/anycolor-web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tecnologia/anycolor-web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+  core:
+    name: Núcleo de reglas · 16 pruebas
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tecnologia/anycolor-core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run pruebas
