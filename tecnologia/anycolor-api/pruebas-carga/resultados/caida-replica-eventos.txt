@@ -1,0 +1,4 @@
+13:26:28
+replica 2 apagada
+13:27:01
+replica 2 encendida

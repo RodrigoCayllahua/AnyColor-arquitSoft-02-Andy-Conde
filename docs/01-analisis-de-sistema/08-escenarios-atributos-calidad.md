@@ -3,6 +3,8 @@
 Cada atributo de [04-atributos-de-calidad.md](04-atributos-de-calidad.md) se convierte en un escenario medible con seis partes: **fuente**, **estímulo**, **artefacto**, **condición (entorno)**, **respuesta** y **medida**. Se agrega cómo se verifica y en qué estado está.
 
 > Las medidas marcadas como *propuesta por validar* se confirmarán con el dueño del salón y con pruebas de carga en el siguiente sprint.
+>
+> **Actualización del segundo sprint:** EQ-01, EQ-02, EQ-04, EQ-05 y EQ-07 se validaron con k6, Postman y Jest; EQ-03 se probó con 2 000 usuarios. Resultados en [05-validacion-atributos-calidad.md](../05-implementacion-sprint2/05-validacion-atributos-calidad.md).
 
 ---
 

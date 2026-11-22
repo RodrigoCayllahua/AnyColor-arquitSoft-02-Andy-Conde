@@ -1,0 +1,25 @@
+default   [ 100% ] 200 VUs  1m09.9s/1m10s
+
+     ✓ catálogo 200
+     ✓ disponibilidad 200
+
+     checks.........................: 100.00% 50620 out of 50620
+     data_received..................: 74 MB   1.0 MB/s
+     data_sent......................: 8.1 MB  115 kB/s
+     http_req_blocked...............: avg=398.82µs med=7.53µs   p(95)=13.46µs  max=272.89ms
+     http_req_connecting............: avg=249.81µs med=0s       p(95)=0s       max=207.8ms 
+     http_req_duration..............: avg=26.32ms  med=6.79ms   p(95)=89.85ms  max=5.04s   
+       { expected_response:true }...: avg=26.32ms  med=6.79ms   p(95)=89.85ms  max=5.04s   
+   ✓ http_req_failed................: 0.00%   0 out of 50620
+     http_req_receiving.............: avg=148.45µs med=125.86µs p(95)=223.59µs max=49.12ms 
+     http_req_sending...............: avg=133.92µs med=23.34µs  p(95)=72.1µs   max=137.32ms
+     http_req_tls_handshaking.......: avg=0s       med=0s       p(95)=0s       max=0s      
+     http_req_waiting...............: avg=26.04ms  med=6.62ms   p(95)=89.5ms   max=5.04s   
+     http_reqs......................: 50620   717.919982/s
+     iteration_duration.............: avg=554.44ms med=515.62ms p(95)=670.58ms max=5.64s   
+     iterations.....................: 25310   358.959991/s
+     vus............................: 200     min=200            max=200
+     vus_max........................: 200     min=200            max=200
+
+
+default ✓ [ 100% ] 200 VUs  1m10s

@@ -1,0 +1,40 @@
+BEGIN
+INSERT 0 19710
+ANALYZE
+ citas_de_prueba 
+-----------------
+           19716
+(1 row)
+
+                                                                                                                                                                                  QUERY PLAN                                                                                                                                                                                   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on citas (actual time=0.133..0.137 rows=18 loops=1)
+   Recheck Cond: (((estilista_id = '33333333-1111-4111-8111-000000000004'::uuid) AND (tstzrange(inicio, fin) && '["2028-06-10 05:00:00+00","2028-06-11 05:00:00+00")'::tstzrange) AND (estado <> 'cancelada'::text)) OR ((sillon_id = $0) AND (tstzrange(inicio, fin) && '["2028-06-10 05:00:00+00","2028-06-11 05:00:00+00")'::tstzrange) AND (estado <> 'cancelada'::text)))
+   Heap Blocks: exact=2
+   InitPlan 1 (returns $0)
+     ->  Index Scan using usuarios_pkey on usuarios (actual time=0.009..0.010 rows=1 loops=1)
+           Index Cond: (id = '33333333-1111-4111-8111-000000000004'::uuid)
+   ->  BitmapOr (actual time=0.100..0.100 rows=0 loops=1)
+         ->  Bitmap Index Scan on sin_solape_estilista (actual time=0.054..0.054 rows=18 loops=1)
+               Index Cond: ((estilista_id = '33333333-1111-4111-8111-000000000004'::uuid) AND (tstzrange(inicio, fin) && '["2028-06-10 05:00:00+00","2028-06-11 05:00:00+00")'::tstzrange))
+         ->  Bitmap Index Scan on sin_solape_sillon (actual time=0.026..0.026 rows=18 loops=1)
+               Index Cond: ((sillon_id = $0) AND (tstzrange(inicio, fin) && '["2028-06-10 05:00:00+00","2028-06-11 05:00:00+00")'::tstzrange))
+ Planning Time: 0.391 ms
+ Execution Time: 0.232 ms
+(13 rows)
+
+                                                                                QUERY PLAN                                                                                 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on citas (actual time=0.037..0.046 rows=36 loops=1)
+   Recheck Cond: ((sede_id = $0) AND (inicio >= '2028-06-10 05:00:00+00'::timestamp with time zone) AND (inicio < '2028-06-11 05:00:00+00'::timestamp with time zone))
+   Heap Blocks: exact=2
+   InitPlan 1 (returns $0)
+     ->  Index Scan using usuarios_pkey on usuarios (actual time=0.013..0.014 rows=1 loops=1)
+           Index Cond: (id = '33333333-1111-4111-8111-000000000004'::uuid)
+   ->  Bitmap Index Scan on idx_citas_sede_inicio (actual time=0.032..0.032 rows=36 loops=1)
+         Index Cond: ((sede_id = $0) AND (inicio >= '2028-06-10 05:00:00+00'::timestamp with time zone) AND (inicio < '2028-06-11 05:00:00+00'::timestamp with time zone))
+ Planning Time: 0.394 ms
+ Execution Time: 0.078 ms
+(10 rows)
+
+ROLLBACK
