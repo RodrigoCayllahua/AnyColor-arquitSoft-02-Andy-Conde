@@ -1,0 +1,52 @@
+### Pruebas de la API con la extensión "REST Client" de VS Code.
+### Haz clic en "Send Request" encima de cada petición.
+
+@api = http://localhost:3001/api/v1
+
+### 1. Ver el catálogo (no necesita sesión)
+GET {{api}}/catalogo/servicios
+
+### 2. Estilistas que hacen el corte de cabello
+GET {{api}}/catalogo/servicios/44444444-1111-4111-8111-000000000001/estilistas
+
+### 3. Iniciar sesión como clienta (copia el "token" de la respuesta)
+# @name login
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{ "email": "ana@correo.com", "clave": "AnyColor2026" }
+
+### Guarda el token automáticamente para las siguientes peticiones
+@token = {{login.response.body.token}}
+
+### 4. Horarios libres de Carla para un día (cambia la fecha por una futura)
+GET {{api}}/citas/disponibilidad?servicioId=44444444-1111-4111-8111-000000000001&estilistaId=33333333-1111-4111-8111-000000000004&fecha=2026-12-15
+
+### 5. Bloquear 5 minutos el horario de las 10:00
+POST {{api}}/citas/bloqueos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "servicioId": "44444444-1111-4111-8111-000000000001",
+  "estilistaId": "33333333-1111-4111-8111-000000000004",
+  "inicio": "2026-12-15T10:00:00-05:00"
+}
+
+### 6. Confirmar la cita (dentro de los 5 minutos)
+POST {{api}}/citas
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "servicioId": "44444444-1111-4111-8111-000000000001",
+  "estilistaId": "33333333-1111-4111-8111-000000000004",
+  "inicio": "2026-12-15T10:00:00-05:00"
+}
+
+### 7. Mis citas
+GET {{api}}/citas/mias
+Authorization: Bearer {{token}}
+
+### 8. Sin token → 401
+GET {{api}}/citas/mias

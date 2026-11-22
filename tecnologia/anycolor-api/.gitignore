@@ -1,0 +1,7 @@
+# Dependencias y compilados (se regeneran con npm install / npm run build)
+node_modules/
+dist/
+coverage/
+
+# Variables secretas: NUNCA subir a GitHub
+.env
