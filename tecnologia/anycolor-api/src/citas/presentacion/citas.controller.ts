@@ -5,6 +5,7 @@
 import {
   Body,
   Controller,
+  ForbiddenException,
   Get,
   Inject,
   Param,
@@ -12,15 +13,16 @@ import {
   Patch,
   Post,
   Query,
-  UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import {
-  AutorizacionGuard,
+  Publico,
   Roles,
   UsuarioActual,
   type UsuarioToken,
 } from '../../auth/autorizacion';
+import { limiteDe } from '../../compartido/limite-peticiones';
 import { BloquearHorarioCasoUso } from '../aplicacion/bloquear-horario.caso-uso';
 import { CambiarEstadoCitaCasoUso } from '../aplicacion/cambiar-estado-cita.caso-uso';
 import { ConfirmarCitaCasoUso } from '../aplicacion/confirmar-cita.caso-uso';
@@ -48,6 +50,7 @@ export class CitasController {
   ) {}
 
   /** Turnos de un día: libre, ocupado, en_proceso o pasado */
+  @Publico() // los horarios libres se ven antes de iniciar sesión (no muestran quién reservó)
   @Get('disponibilidad')
   verDisponibilidad(@Query() q: DisponibilidadQuery) {
     return this.disponibilidad.ejecutar(q.servicioId, q.estilistaId, q.fecha);
@@ -55,8 +58,11 @@ export class CitasController {
 
   /** Bloquear un horario 5 minutos (409 si otra persona lo tiene) */
   @Post('bloqueos')
-  @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
+  // Evita que un bot bloquee todos los horarios del día: máx. 30 bloqueos por minuto por IP
+  @Throttle({
+    default: { limit: limiteDe('LIMITE_BLOQUEOS', 30), ttl: 60_000 },
+  })
   bloquearHorario(@Body() dto: ReservaDto, @UsuarioActual() u: UsuarioToken) {
     return this.bloquear.ejecutar({
       ...dto,
@@ -67,7 +73,6 @@ export class CitasController {
 
   /** Confirmar la cita (exige el bloqueo vigente; guardia final EXCLUDE) */
   @Post()
-  @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
   confirmarCita(@Body() dto: ReservaDto, @UsuarioActual() u: UsuarioToken) {
     return this.confirmar.ejecutar({
@@ -79,7 +84,6 @@ export class CitasController {
 
   /** Citas de la clienta que inició sesión */
   @Get('mias')
-  @UseGuards(AutorizacionGuard)
   @Roles('CLIENTE')
   misCitas(@UsuarioActual() u: UsuarioToken) {
     return this.citas.listarDeCliente(u.sub);
@@ -87,9 +91,12 @@ export class CitasController {
 
   /** Agenda del día para el panel del personal (filtrada por sede y rol) */
   @Get('agenda')
-  @UseGuards(AutorizacionGuard)
   @Roles('ESTILISTA', 'CAJERO', 'ADMIN_SEDE', 'SUPER_ADMIN')
   agenda(@Query() q: AgendaQuery, @UsuarioActual() u: UsuarioToken) {
+    // Un trabajador sin sede asignada no puede ver agendas (si no, vería las de todas las sedes)
+    if (u.rol !== 'SUPER_ADMIN' && !u.sedeId) {
+      throw new ForbiddenException('Tu usuario no tiene una sede asignada');
+    }
     const desde = fechaHoraLocal(q.fecha, 0);
     const hasta = new Date(desde.getTime() + 24 * 3600_000);
     return this.citas.listarAgenda({
@@ -102,7 +109,7 @@ export class CitasController {
 
   /** Iniciar, finalizar o cancelar una cita */
   @Patch(':id/estado')
-  @UseGuards(AutorizacionGuard)
+  @Roles('CLIENTE', 'ESTILISTA', 'CAJERO', 'ADMIN_SEDE', 'SUPER_ADMIN') // permisos finos en el caso de uso
   cambiarEstadoCita(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: CambiarEstadoDto,

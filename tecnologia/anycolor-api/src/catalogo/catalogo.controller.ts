@@ -4,6 +4,7 @@
 // =============================================================
 import { Controller, Get, Inject, Param, ParseUUIDPipe } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { Publico } from '../auth/autorizacion';
 import type { Pool } from 'pg';
 import { POOL } from '../compartido/base-datos.module';
 import { CACHE, leerConCache, type Cache } from '../compartido/cache';
@@ -11,6 +12,7 @@ import { CACHE, leerConCache, type Cache } from '../compartido/cache';
 const TTL_SEG = 300; // el catálogo cambia poco: 5 minutos en caché
 
 @ApiTags('Catálogo')
+@Publico() // el catálogo es información pública: se ve antes de iniciar sesión
 @Controller('catalogo')
 export class CatalogoController {
   constructor(

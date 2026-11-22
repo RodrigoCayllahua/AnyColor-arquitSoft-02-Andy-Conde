@@ -2,12 +2,28 @@
 // PRUEBAS DE PUNTA A PUNTA · API real + PostgreSQL + Redis (los de docker compose).
 // Requisito: `docker compose up -d` y `npm run db:iniciar`. Ejecutar: npm run test:e2e
 // =============================================================
-import { INestApplication, ValidationPipe } from '@nestjs/common';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { Test } from '@nestjs/testing';
+import type Redis from 'ioredis';
 import { Pool } from 'pg';
 import request from 'supertest';
 import { AppModule } from '../src/app.module';
-import { ErroresDominioFilter } from '../src/compartido/errores-dominio.filter';
+import { configurarApp } from '../src/compartido/configurar-app';
+import { REDIS } from '../src/compartido/redis.module';
+
+// Todas las pruebas salen de la misma IP: se suben los límites por IP para que no se
+// estorben entre sí. El bloqueo por fuerza bruta y el límite de peticiones se prueban aparte, abajo.
+process.env.LIMITE_REGISTRO = '1000';
+process.env.LIMITE_LOGIN = '1000';
+process.env.LIMITE_BLOQUEOS = '1000';
+
+/** Borra los contadores de límites y de intentos fallidos guardados en Redis. */
+async function limpiarContadores(redis: Redis) {
+  for (const patron of ['limite:*', 'login:fallos:*']) {
+    const claves = await redis.keys(patron);
+    if (claves.length) await redis.del(...claves);
+  }
+}
 
 const CORTE = '44444444-1111-4111-8111-000000000001';
 const CARLA = '33333333-1111-4111-8111-000000000004';
@@ -18,7 +34,7 @@ const dentroDe = (dias: number) =>
   });
 
 describe('API AnyColor (e2e)', () => {
-  let app: INestApplication;
+  let app: NestExpressApplication;
   let http: ReturnType<typeof request>;
   let pool: Pool;
   const fecha = dentroDe(7 + Math.floor(Math.random() * 300)); // fecha libre en cada ejecución
@@ -31,17 +47,10 @@ describe('API AnyColor (e2e)', () => {
     const modulo = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
-    app = modulo.createNestApplication();
-    app.setGlobalPrefix('api/v1');
-    app.useGlobalPipes(
-      new ValidationPipe({
-        whitelist: true,
-        forbidNonWhitelisted: true,
-        transform: true,
-      }),
-    );
-    app.useGlobalFilters(new ErroresDominioFilter());
+    app = modulo.createNestApplication<NestExpressApplication>();
+    configurarApp(app); // la misma configuración de seguridad que en producción
     await app.init();
+    await limpiarContadores(app.get<Redis>(REDIS));
     http = request(app.getHttpServer());
     pool = new Pool({ connectionString: process.env.DATABASE_URL });
   });
@@ -169,5 +178,124 @@ describe('API AnyColor (e2e)', () => {
       .send({ accion: 'iniciar' })
       .expect(200);
     expect(r.body.estado).toBe('en_atencion');
+  });
+
+  it('OWASP · cabeceras de seguridad y sin X-Powered-By', async () => {
+    const r = await http.get('/api/v1/catalogo/sedes').expect(200);
+    expect(r.headers['x-powered-by']).toBeUndefined();
+    expect(r.headers['x-content-type-options']).toBe('nosniff');
+    expect(r.headers['x-frame-options']).toBe('SAMEORIGIN');
+    expect(r.headers['strict-transport-security']).toBeDefined();
+    expect(r.headers['content-security-policy']).toBeDefined();
+  });
+
+  it('OWASP · CORS solo acepta la aplicación web conocida', async () => {
+    const malo = await http
+      .get('/api/v1/catalogo/sedes')
+      .set('Origin', 'https://sitio-malicioso.com');
+    expect(malo.headers['access-control-allow-origin']).toBeUndefined();
+    const bueno = await http
+      .get('/api/v1/catalogo/sedes')
+      .set('Origin', 'http://localhost:3000');
+    expect(bueno.headers['access-control-allow-origin']).toBe(
+      'http://localhost:3000',
+    );
+  });
+
+  it('OWASP · los errores no revelan detalles internos y los datos se validan', async () => {
+    // JSON mal formado → 400 sin stack trace
+    const mal = await http
+      .post('/api/v1/auth/login')
+      .set('Content-Type', 'application/json')
+      .send('{"email": ')
+      .expect(400);
+    expect(JSON.stringify(mal.body)).not.toMatch(/at |\.ts|node_modules/);
+    // cuerpo gigante → 413
+    await http
+      .post('/api/v1/auth/login')
+      .send({ email: 'a@b.com', clave: 'x'.repeat(20_000) })
+      .expect(413);
+    // intento de inyección SQL en el correo → 400 (no llega a la base de datos)
+    await http
+      .post('/api/v1/auth/login')
+      .send({ email: "' OR 1=1 --", clave: 'x' })
+      .expect(400);
+    // HTML en el nombre → 400
+    await http
+      .post('/api/v1/auth/registro')
+      .send({
+        nombre: '<script>alert(1)</script>',
+        email: `xss-${Date.now()}@correo.com`,
+        clave: 'Clave2026',
+      })
+      .expect(400);
+    // campos extra (por ejemplo intentar darse rol de administrador) → 400
+    await http
+      .post('/api/v1/auth/registro')
+      .send({
+        nombre: 'Intrusa',
+        email: `rol-${Date.now()}@correo.com`,
+        clave: 'Clave2026',
+        rol: 'SUPER_ADMIN',
+      })
+      .expect(400);
+    // fecha imposible → 400
+    await http
+      .get(
+        `/api/v1/citas/disponibilidad?servicioId=${CORTE}&estilistaId=${CARLA}&fecha=2026-13-45`,
+      )
+      .expect(400);
+  });
+
+  it('OWASP · un token con otro algoritmo o sin firma es rechazado', async () => {
+    const sinFirma =
+      Buffer.from('{"alg":"none","typ":"JWT"}').toString('base64url') +
+      '.' +
+      Buffer.from('{"sub":"x","rol":"SUPER_ADMIN"}').toString('base64url') +
+      '.';
+    await http
+      .get('/api/v1/citas/agenda?fecha=2026-12-01')
+      .set('Authorization', `Bearer ${sinFirma}`)
+      .expect(401);
+  });
+
+  it('fuerza bruta · 5 claves incorrectas bloquean el login aunque luego sea la correcta (429)', async () => {
+    const email = `fb-${Date.now()}@correo.com`;
+    await http
+      .post('/api/v1/auth/registro')
+      .send({ nombre: 'Clienta Fuerza Bruta', email, clave: 'Clave2026' })
+      .expect(201);
+    for (let i = 0; i < 5; i++) {
+      await http
+        .post('/api/v1/auth/login')
+        .send({ email, clave: 'Incorrecta1' })
+        .expect(401);
+    }
+    const bloqueada = await http
+      .post('/api/v1/auth/login')
+      .send({ email, clave: 'Clave2026' })
+      .expect(429);
+    expect(bloqueada.body.message).toMatch(/Demasiados intentos/);
+  });
+
+  it('rate limiting · al pasar el límite de peticiones responde 429 con Retry-After', async () => {
+    await limpiarContadores(app.get<Redis>(REDIS));
+    process.env.LIMITE_LOGIN = '3';
+    try {
+      for (let i = 0; i < 3; i++) {
+        await http
+          .post('/api/v1/auth/login')
+          .send({ email: `nadie-${i}@correo.com`, clave: 'x' })
+          .expect(401);
+      }
+      const r = await http
+        .post('/api/v1/auth/login')
+        .send({ email: 'nadie-4@correo.com', clave: 'x' })
+        .expect(429);
+      expect(r.headers['retry-after']).toBeDefined();
+    } finally {
+      process.env.LIMITE_LOGIN = '1000';
+      await limpiarContadores(app.get<Redis>(REDIS));
+    }
   });
 });
