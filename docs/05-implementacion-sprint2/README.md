@@ -20,7 +20,7 @@ En este sprint la arquitectura del primer sprint pasa a **código que funciona**
 | Especificaciones SDD | [01-especificaciones-sdd.md](01-especificaciones-sdd.md) | 6 funcionalidades especificadas |
 | Endpoints REST con OpenAPI/Swagger | `http://localhost:3001/api/docs` | 12 endpoints, 4 esquemas |
 | Análisis de base de datos y caché | [03-base-de-datos-y-cache.md](03-base-de-datos-y-cache.md) | Consultas en menos de 1 ms con 19 716 citas; la caché hace las respuestas 6 veces más rápidas |
-| SOLID y patrones | [00-arquitectura-implementada.md](00-arquitectura-implementada.md) | 5 principios y 7 patrones ubicados en el código |
+| SOLID y patrones | [00-arquitectura-implementada.md](00-arquitectura-implementada.md) | 5 principios y 8 patrones ubicados en el código |
 | Pruebas Jest con cobertura | `npm run test:cov` | 19 unitarias + 6 de integración; 95 % de líneas cubiertas |
 | GitHub Actions | `.github/workflows/ci.yml` | Lint, pruebas, cobertura y build en cada push |
 | Postman | `pruebas-carga/postman/` | 60 de 60 verificaciones aprobadas (Newman) |
