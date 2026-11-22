@@ -1,5 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ErroresDominioFilter } from './compartido/errores-dominio.filter';
 
@@ -19,6 +20,17 @@ async function bootstrap() {
   );
   app.useGlobalFilters(new ErroresDominioFilter());
   app.enableShutdownHooks();
+
+  // Documentación OpenAPI/Swagger: http://localhost:3001/api/docs
+  const config = new DocumentBuilder()
+    .setTitle('API AnyColor Salón')
+    .setDescription(
+      'API REST de reservas concurrentes, catálogo y autenticación. Inicia sesión en /auth/login y pega el token en "Authorize".',
+    )
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+  SwaggerModule.setup('api/docs', app, SwaggerModule.createDocument(app, config));
 
   const puerto = Number(process.env.PUERTO ?? 3001);
   await app.listen(puerto);

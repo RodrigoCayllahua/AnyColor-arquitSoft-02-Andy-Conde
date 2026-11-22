@@ -2,9 +2,11 @@
 // Módulo Catálogo (sprint 2: solo lectura). Lo que la clienta ve antes de reservar.
 // =============================================================
 import { Controller, Get, Inject, Param, ParseUUIDPipe } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import type { Pool } from 'pg';
 import { POOL } from '../compartido/base-datos.module';
 
+@ApiTags('Catálogo')
 @Controller('catalogo')
 export class CatalogoController {
   constructor(@Inject(POOL) private readonly pool: Pool) {}

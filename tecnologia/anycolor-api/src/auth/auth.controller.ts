@@ -6,6 +6,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { LoginDto, RegistroDto } from './auth.dto';
 import { AuthService } from './auth.service';
 import {
@@ -14,6 +15,7 @@ import {
   type UsuarioToken,
 } from './autorizacion';
 
+@ApiTags('Autenticación')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly auth: AuthService) {}
@@ -32,6 +34,7 @@ export class AuthController {
   }
 
   /** GET /api/v1/auth/yo → datos del usuario del token */
+  @ApiBearerAuth()
   @Get('yo')
   @UseGuards(AutorizacionGuard)
   yo(@UsuarioActual() usuario: UsuarioToken) {

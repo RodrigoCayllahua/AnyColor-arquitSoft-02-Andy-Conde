@@ -14,6 +14,7 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import {
   AutorizacionGuard,
   Roles,
@@ -34,6 +35,8 @@ import {
   ReservaDto,
 } from './citas.dto';
 
+@ApiTags('Citas')
+@ApiBearerAuth()
 @Controller('citas')
 export class CitasController {
   constructor(
